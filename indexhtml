@@ -1,2025 +1,827 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Art of Occasions — Premium event decoration, children's parties, birthday celebrations, chocolate arrangements, personalized candle gifts, and custom printed glass gifts.">
-    <meta name="keywords" content="event decoration, party planning, children parties, birthday celebrations, chocolate arrangements, candle gifts, glass gifts, luxury events">
-    <title>Art of Occasions — Turning Every Occasion Into a Beautiful Memory</title>
-    <link rel="icon" href="https://i.imgur.com/WQHSNRf.jpeg" type="image/jpeg">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NEXORA — Premium Digital Agency. Professional websites starting at $29.">
+<link rel="icon" type="image/jpeg" href="https://i.imgur.com/XRLsmbg.jpeg">
+<title>NEXORA — Premium Digital Agency | Web Development · AI Solutions · E-Commerce</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
-        :root {
-            --white: #FFFFFF;
-            --black: #000000;
-            --gray-50: #FAFAFA;
-            --gray-100: #F5F5F5;
-            --gray-200: #E5E5E5;
-            --gray-300: #D4D4D4;
-            --gray-400: #A3A3A3;
-            --gray-500: #737373;
-            --gray-600: #525252;
-            --gray-700: #404040;
-            --gray-800: #262626;
-            --gray-900: #171717;
-            --font-display: 'Playfair Display', serif;
-            --font-body: 'Inter', sans-serif;
-            --font-elegant: 'Cormorant Garamond', serif;
-        }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 
-        html {
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-            scrollbar-width: thin;
-            scrollbar-color: var(--gray-400) transparent;
-        }
+:root{
+  --bg:#050507;--bg2:#0a0a0f;--card:rgba(255,255,255,0.03);--card2:rgba(255,255,255,0.06);
+  --t1:#f5f5f7;--t2:rgba(245,245,247,0.6);--t3:rgba(245,245,247,0.4);
+  --ac:#6366f1;--ac2:#818cf8;--acg:rgba(99,102,241,0.15);--ac3:#8b5cf6;--ac4:#06b6d4;
+  --bd:rgba(255,255,255,0.06);--bd2:rgba(255,255,255,0.12);
+}
 
-        body {
-            font-family: var(--font-body);
-            color: var(--gray-800);
-            background: var(--white);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--ac) var(--bg)}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--t1);overflow-x:hidden;-webkit-font-smoothing:antialiased;line-height:1.6}
+::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--ac);border-radius:3px}
 
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: var(--gray-400); border-radius: 3px; }
+.cur{position:fixed;width:24px;height:24px;border:1.5px solid var(--ac2);border-radius:50%;pointer-events:none;z-index:99998;transition:width .3s,height .3s;transform:translate(-50%,-50%);mix-blend-mode:difference}
+.dot{position:fixed;width:5px;height:5px;background:var(--ac2);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%)}
 
-        /* ============ PRELOADER ============ */
-        .preloader {
-            position: fixed;
-            inset: 0;
-            z-index: 99999;
-            background: var(--black);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            transition: opacity 0.8s ease, visibility 0.8s ease;
-        }
-        .preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-        .preloader-logo {
-            width: auto;
-            height: 100px;
-            max-width: 220px;
-            border-radius: 12px;
-            object-fit: contain;
-            animation: preloaderPulse 1.5s ease-in-out infinite;
-        }
-        .preloader-bar {
-            width: 120px;
-            height: 2px;
-            background: var(--gray-800);
-            margin-top: 30px;
-            border-radius: 2px;
-            overflow: hidden;
-        }
-        .preloader-bar::after {
-            content: '';
-            display: block;
-            width: 0%;
-            height: 100%;
-            background: var(--white);
-            animation: preloaderFill 2s ease forwards;
-        }
-        @keyframes preloaderPulse {
-            0%, 100% { transform: scale(1); opacity: 0.7; }
-            50% { transform: scale(1.08); opacity: 1; }
-        }
-        @keyframes preloaderFill {
-            to { width: 100%; }
-        }
+.loader{position:fixed;inset:0;background:var(--bg);z-index:100000;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .8s,visibility .8s}
+.loader.done{opacity:0;visibility:hidden;pointer-events:none}
+.loader img{width:80px;height:80px;object-fit:contain;border-radius:16px;animation:lRev 1s ease forwards}
+.lbw{width:200px;height:2px;background:var(--bd);border-radius:2px;margin-top:28px;overflow:hidden}
+.lb{height:100%;background:linear-gradient(90deg,var(--ac),var(--ac3));border-radius:2px;animation:lBar 2s ease forwards}
+@keyframes lRev{0%{opacity:0;transform:translateY(10px) scale(.9)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes lBar{0%{width:0}100%{width:100%}}
 
-        /* ============ CURSOR ============ */
-        .custom-cursor {
-            width: 20px;
-            height: 20px;
-            border: 1.5px solid var(--gray-600);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 99998;
-            transition: transform 0.15s ease, background 0.3s ease, border-color 0.3s ease;
-            mix-blend-mode: difference;
-            transform: translate(-50%, -50%);
-        }
-        .custom-cursor.hover {
-            transform: translate(-50%, -50%) scale(2.2);
-            background: rgba(255,255,255,0.15);
-            border-color: var(--white);
-        }
-        @media (max-width: 768px) {
-            .custom-cursor { display: none; }
-        }
+.bgG{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:80px 80px}
+.orb{position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0;animation:orbF 15s ease-in-out infinite}
+.o1{width:600px;height:600px;background:radial-gradient(circle,rgba(99,102,241,.12),transparent 70%);top:-200px;left:-200px}
+.o2{width:500px;height:500px;background:radial-gradient(circle,rgba(139,92,246,.08),transparent 70%);top:50%;right:-200px;animation-delay:-5s}
+.o3{width:400px;height:400px;background:radial-gradient(circle,rgba(6,182,212,.06),transparent 70%);bottom:-100px;left:30%;animation-delay:-10s}
+@keyframes orbF{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.05)}66%{transform:translate(-20px,20px) scale(.95)}}
+.pts{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.pt{position:absolute;width:2px;height:2px;background:var(--ac2);border-radius:50%;opacity:0;animation:ptF linear infinite}
+@keyframes ptF{0%{opacity:0;transform:translateY(100vh) scale(0)}10%{opacity:.5}90%{opacity:.5}100%{opacity:0;transform:translateY(-20vh) scale(1)}}
+.glow{position:fixed;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.06),transparent 60%);pointer-events:none;z-index:1;transform:translate(-50%,-50%)}
 
-        /* ============ NAVBAR ============ */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 20px 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .navbar.scrolled {
-            background: rgba(255,255,255,0.85);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            padding: 12px 40px;
-            box-shadow: 0 1px 30px rgba(0,0,0,0.06);
-        }
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            text-decoration: none;
-            color: var(--white);
-            transition: color 0.5s;
-        }
-        .navbar.scrolled .nav-logo { color: var(--black); }
-        .nav-logo img {
-            width: auto;
-            height: 44px;
-            max-width: 140px;
-            border-radius: 8px;
-            object-fit: contain;
-            transition: transform 0.4s ease;
-        }
-        .nav-logo:hover img { transform: scale(1.08); }
-        .nav-logo-text {
-            font-family: var(--font-display);
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 36px;
-            list-style: none;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--white);
-            font-size: 0.82rem;
-            font-weight: 500;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            position: relative;
-            padding: 4px 0;
-            transition: color 0.5s;
-        }
-        .navbar.scrolled .nav-links a { color: var(--black); }
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: currentColor;
-            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .nav-links a:hover::after { width: 100%; }
-        .nav-cta {
-            padding: 10px 28px !important;
-            border: 1px solid rgba(255,255,255,0.5) !important;
-            border-radius: 30px;
-            transition: all 0.4s ease !important;
-        }
-        .nav-cta::after { display: none !important; }
-        .nav-cta:hover {
-            background: var(--white) !important;
-            color: var(--black) !important;
-        }
-        .navbar.scrolled .nav-cta {
-            border-color: var(--black) !important;
-        }
-        .navbar.scrolled .nav-cta:hover {
-            background: var(--black) !important;
-            color: var(--white) !important;
-        }
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(5,5,7,.6);backdrop-filter:blur(40px) saturate(1.5);-webkit-backdrop-filter:blur(40px) saturate(1.5);border-bottom:1px solid var(--bd);transition:background .4s}
+.nav.sc{background:rgba(5,5,7,.92)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo img{width:38px;height:38px;object-fit:contain;border-radius:10px}
+.nav-logo span{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:-.03em;background:linear-gradient(135deg,#fff,rgba(255,255,255,.75));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{color:var(--t2);text-decoration:none;font-size:.875rem;font-weight:450;transition:color .3s;position:relative}
+.nav-links a:hover{color:var(--t1)}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--ac);transition:width .3s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:12px}
+.btn-n{padding:10px 20px;border-radius:10px;font-size:.85rem;font-weight:500;text-decoration:none;transition:all .3s;cursor:pointer;border:none;font-family:'Inter',sans-serif}
+.btn-ng{background:transparent;color:var(--t2)}
+.btn-ng:hover{color:var(--t1)}
+.btn-np{background:linear-gradient(135deg,var(--ac),var(--ac3));color:white;box-shadow:0 0 20px var(--acg)}
+.btn-np:hover{transform:translateY(-1px);box-shadow:0 0 30px rgba(99,102,241,.3)}
+.mob-tog{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+.mob-tog span{width:22px;height:1.5px;background:var(--t1);transition:all .3s}
 
-        /* Mobile Menu */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            z-index: 1002;
-            padding: 8px;
-        }
-        .menu-toggle span {
-            width: 26px;
-            height: 2px;
-            background: var(--white);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 2px;
-        }
-        .navbar.scrolled .menu-toggle span { background: var(--black); }
-        .menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-            background: var(--white) !important;
-        }
-        .menu-toggle.active span:nth-child(2) { opacity: 0; }
-        .menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-            background: var(--white) !important;
-        }
-        .mobile-menu {
-            position: fixed;
-            inset: 0;
-            z-index: 1001;
-            background: rgba(0,0,0,0.97);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 32px;
-            transform: translateX(100%);
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .mobile-menu.open { transform: translateX(0); }
-        .mobile-menu a {
-            text-decoration: none;
-            color: var(--white);
-            font-family: var(--font-display);
-            font-size: 2rem;
-            font-weight: 400;
-            letter-spacing: 2px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.4s ease;
-        }
-        .mobile-menu.open a {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .mobile-menu.open a:nth-child(1) { transition-delay: 0.1s; }
-        .mobile-menu.open a:nth-child(2) { transition-delay: 0.2s; }
-        .mobile-menu.open a:nth-child(3) { transition-delay: 0.3s; }
-        .mobile-menu.open a:nth-child(4) { transition-delay: 0.4s; }
-        .mobile-menu.open a:nth-child(5) { transition-delay: 0.5s; }
-        .mobile-menu.open a:nth-child(6) { transition-delay: 0.6s; }
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding:120px 48px 80px;overflow:hidden}
+.hl{position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:800px;height:600px;background:radial-gradient(ellipse,rgba(99,102,241,.15) 0%,transparent 60%);pointer-events:none;animation:hlp 6s ease-in-out infinite}
+@keyframes hlp{0%,100%{opacity:.6;transform:translateX(-50%) scale(1)}50%{opacity:1;transform:translateX(-50%) scale(1.1)}}
+.hero-c{text-align:center;max-width:900px;position:relative;z-index:2}
+.hbadge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px 6px 8px;background:var(--card);border:1px solid var(--bd);border-radius:100px;font-size:.8rem;color:var(--t2);margin-bottom:32px;animation:fiu .8s ease forwards;backdrop-filter:blur(10px)}
+.bdot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:pls 2s ease-in-out infinite}
+@keyframes pls{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.ht{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.8rem,7vw,5.5rem);font-weight:700;line-height:1.05;letter-spacing:-.04em;margin-bottom:24px;animation:fiu .8s ease .1s forwards;opacity:0}
+.gr{background:linear-gradient(135deg,var(--ac2),var(--ac3),var(--ac4));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;background-size:200% 200%;animation:gs 5s ease infinite}
+@keyframes gs{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hs{font-size:clamp(1rem,2vw,1.2rem);color:var(--t2);max-width:580px;margin:0 auto 40px;line-height:1.7;animation:fiu .8s ease .2s forwards;opacity:0}
+.hacts{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;animation:fiu .8s ease .3s forwards;opacity:0}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;padding:18px 36px;background:linear-gradient(135deg,#25d366,#128c7e);color:white;font-size:1rem;font-weight:700;border-radius:16px;text-decoration:none;border:none;cursor:pointer;transition:all .4s;box-shadow:0 4px 30px rgba(37,211,102,.3),inset 0 1px 0 rgba(255,255,255,.15);font-family:'Inter',sans-serif;letter-spacing:-.01em}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(37,211,102,.5)}
+.btn-wa-2{display:inline-flex;align-items:center;gap:10px;padding:18px 36px;background:var(--card);color:var(--t1);font-size:1rem;font-weight:600;border-radius:16px;text-decoration:none;border:1px solid var(--bd);cursor:pointer;transition:all .3s;backdrop-filter:blur(10px);font-family:'Inter',sans-serif}
+.btn-wa-2:hover{background:var(--card2);border-color:var(--bd2);transform:translateY(-2px)}
+.hm{display:flex;align-items:center;justify-content:center;gap:48px;margin-top:64px;animation:fiu .8s ease .4s forwards;opacity:0}
+.hmv{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,var(--t1),var(--t2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hml{font-size:.78rem;color:var(--t3);margin-top:4px;text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+.fcs{position:absolute;inset:0;pointer-events:none;z-index:1}
+.fc{position:absolute;background:rgba(255,255,255,.03);backdrop-filter:blur(20px);border:1px solid var(--bd);border-radius:16px;padding:18px;animation:flt 8s ease-in-out infinite}
+.fc1{top:20%;left:5%;width:185px;animation-delay:-2s}
+.fc2{top:30%;right:5%;width:170px;animation-delay:-4s}
+.fc3{bottom:15%;left:10%;width:155px;animation-delay:-1s}
+@keyframes flt{0%,100%{transform:translateY(0) rotate(0deg)}25%{transform:translateY(-15px) rotate(1deg)}75%{transform:translateY(10px) rotate(-1deg)}}
+.fci{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem;margin-bottom:8px}
+.fct{font-size:.72rem;color:var(--t2);font-weight:500}
+.fcv{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;margin-top:2px}
+@keyframes fiu{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
-        @media (max-width: 968px) {
-            .nav-links { display: none; }
-            .menu-toggle { display: flex; }
-            .navbar { padding: 16px 24px; }
-            .navbar.scrolled { padding: 12px 24px; }
-        }
+section{position:relative;z-index:2}
+.sc{max-width:1200px;margin:0 auto;padding:0 48px}
+.sh{text-align:center;margin-bottom:60px}
+.sl{display:inline-flex;align-items:center;gap:8px;font-size:.73rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--ac2);margin-bottom:14px}
+.sl::before,.sl::after{content:'';width:20px;height:1px;background:linear-gradient(90deg,transparent,var(--ac))}
+.sl::after{background:linear-gradient(90deg,var(--ac),transparent)}
+.st{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px}
+.sd{font-size:1rem;color:var(--t2);max-width:540px;margin:0 auto;line-height:1.7}
 
-        /* ============ HERO ============ */
-        .hero {
-            position: relative;
-            height: 100vh;
-            min-height: 700px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: var(--black);
-        }
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
-        .hero-bg-img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.25;
-            filter: grayscale(30%);
-            animation: heroZoom 25s ease-in-out infinite alternate;
-        }
-        @keyframes heroZoom {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.12); }
-        }
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg,
-                rgba(0,0,0,0.5) 0%,
-                rgba(0,0,0,0.3) 40%,
-                rgba(0,0,0,0.6) 100%
-            );
-            z-index: 1;
-        }
+/* TRUSTED */
+.trusted{padding:55px 0;border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);background:rgba(255,255,255,.01)}
+.trl{text-align:center;font-size:.73rem;text-transform:uppercase;letter-spacing:.12em;color:var(--t3);margin-bottom:28px;font-weight:500}
+.tlogos{display:flex;align-items:center;justify-content:center;gap:50px;flex-wrap:wrap;opacity:.4;transition:opacity .3s}
+.tlogos:hover{opacity:.6}
+.tlogo{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:600;color:var(--t2)}
 
-        /* Floating shapes */
-        .floating-shapes {
-            position: absolute;
-            inset: 0;
-            z-index: 1;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        .float-shape {
-            position: absolute;
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 50%;
-            animation: floatShape 20s ease-in-out infinite;
-        }
-        .float-shape:nth-child(1) { width: 300px; height: 300px; top: 10%; left: -5%; animation-delay: 0s; animation-duration: 22s; }
-        .float-shape:nth-child(2) { width: 200px; height: 200px; top: 60%; right: -3%; animation-delay: -5s; animation-duration: 18s; }
-        .float-shape:nth-child(3) { width: 150px; height: 150px; bottom: 10%; left: 20%; animation-delay: -10s; animation-duration: 25s; }
-        .float-shape:nth-child(4) { width: 100px; height: 100px; top: 20%; right: 15%; animation-delay: -7s; animation-duration: 20s; border-radius: 0; transform: rotate(45deg); }
-        .float-shape:nth-child(5) { width: 250px; height: 250px; top: 40%; left: 50%; animation-delay: -3s; animation-duration: 30s; }
-        .float-shape:nth-child(6) { width: 60px; height: 60px; top: 15%; left: 40%; animation-delay: -12s; animation-duration: 15s; background: rgba(255,255,255,0.02); }
-        @keyframes floatShape {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            33% { transform: translateY(-30px) rotate(5deg); }
-            66% { transform: translateY(20px) rotate(-3deg); }
-        }
+/* SERVICES */
+.srv{padding:130px 0}
+.srv-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.srv-c{background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:36px 28px;transition:all .5s cubic-bezier(.23,1,.32,1);position:relative;overflow:hidden}
+.srv-c::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--ac),transparent);opacity:0;transition:opacity .4s}
+.srv-c:hover{background:var(--card2);border-color:var(--bd2);transform:translateY(-4px)}
+.srv-c:hover::before{opacity:1}
+.si{width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px}
+.srv-t{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:600;margin-bottom:10px}
+.srv-d{font-size:.88rem;color:var(--t2);line-height:1.7;margin-bottom:20px}
+.srv-f{list-style:none;display:flex;flex-direction:column;gap:7px}
+.srv-f li{font-size:.8rem;color:var(--t3);display:flex;align-items:center;gap:7px}
+.srv-f li::before{content:'✓';color:var(--ac2);font-size:.68rem;font-weight:700}
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            padding: 0 24px;
-            max-width: 900px;
-        }
-        .hero-logo {
-            width: auto;
-            height: 140px;
-            max-width: 300px;
-            border-radius: 14px;
-            object-fit: contain;
-            margin: 0 auto 36px;
-            display: block;
-            border: 2px solid rgba(255,255,255,0.12);
-            box-shadow: 0 0 60px rgba(255,255,255,0.08);
-            animation: heroLogoPulse 4s ease-in-out infinite;
-            background: rgba(255,255,255,0.05);
-            padding: 6px;
-        }
-        @keyframes heroLogoPulse {
-            0%, 100% { box-shadow: 0 0 60px rgba(255,255,255,0.08); }
-            50% { box-shadow: 0 0 80px rgba(255,255,255,0.15); }
-        }
-        .hero-badge {
-            display: inline-block;
-            font-size: 0.7rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.6);
-            margin-bottom: 28px;
-            font-weight: 500;
-            border: 1px solid rgba(255,255,255,0.15);
-            padding: 8px 24px;
-            border-radius: 30px;
-            backdrop-filter: blur(10px);
-        }
-        .hero-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.2rem, 5.5vw, 4.2rem);
-            font-weight: 400;
-            color: var(--white);
-            line-height: 1.2;
-            margin-bottom: 28px;
-            letter-spacing: -0.5px;
-        }
-        .hero-title em {
-            font-style: italic;
-            font-family: var(--font-elegant);
-            font-weight: 300;
-        }
-        .hero-sub {
-            font-family: var(--font-elegant);
-            font-size: clamp(1rem, 2vw, 1.35rem);
-            color: rgba(255,255,255,0.55);
-            font-weight: 300;
-            max-width: 580px;
-            margin: 0 auto 44px;
-            line-height: 1.7;
-            letter-spacing: 0.5px;
-        }
-        .hero-buttons {
-            display: flex;
-            gap: 18px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 40px;
-            background: var(--white);
-            color: var(--black);
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-radius: 50px;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--black);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 50px;
-        }
-        .btn-primary:hover::before { transform: scaleX(1); transform-origin: left; }
-        .btn-primary span { position: relative; z-index: 1; }
-        .btn-primary:hover { color: var(--white); box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 40px;
-            background: transparent;
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-radius: 50px;
-            border: 1px solid rgba(255,255,255,0.3);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-        }
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(255,255,255,0.6);
-        }
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            color: rgba(255,255,255,0.4);
-            animation: scrollBounce 2s ease-in-out infinite;
-        }
-        .scroll-indicator span {
-            font-size: 0.6rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-        }
-        .scroll-line {
-            width: 1px;
-            height: 40px;
-            background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
-            animation: scrollLineAnim 2s ease-in-out infinite;
-        }
-        @keyframes scrollBounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(8px); }
-        }
-        @keyframes scrollLineAnim {
-            0% { opacity: 1; }
-            50% { opacity: 0.3; }
-            100% { opacity: 1; }
-        }
+/* TEMPLATES */
+.tpls{padding:130px 0;background:linear-gradient(180deg,transparent,rgba(99,102,241,.02),transparent)}
+.tpl-tabs{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:44px}
+.tpl-tab{padding:9px 20px;background:var(--card);border:1px solid var(--bd);border-radius:100px;font-size:.8rem;font-weight:500;color:var(--t2);cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif}
+.tpl-tab:hover{border-color:var(--bd2);color:var(--t1)}
+.tpl-tab.active{background:linear-gradient(135deg,var(--ac),var(--ac3));border-color:transparent;color:white}
+.tpl-g{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tpl-c{background:var(--card);border:1px solid var(--bd);border-radius:22px;overflow:hidden;transition:all .6s cubic-bezier(.23,1,.32,1);cursor:pointer;position:relative;display:none}
+.tpl-c.vis{display:block}
+.tpl-c:hover{border-color:var(--bd2);transform:translateY(-8px);box-shadow:0 24px 60px rgba(0,0,0,.4),0 0 40px var(--acg)}
+.tpl-prev{height:240px;position:relative;overflow:hidden}
+.tpl-prev-in{position:absolute;inset:12px;border-radius:10px;overflow:hidden;border:1px solid var(--bd);transition:transform .5s}
+.tpl-c:hover .tpl-prev-in{transform:scale(1.04)}
+.tpl-ov{position:absolute;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(4px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;opacity:0;transition:opacity .4s;z-index:10}
+.tpl-c:hover .tpl-ov{opacity:1}
+.tpl-ov-btn{padding:10px 22px;border-radius:10px;font-size:.82rem;font-weight:600;cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:transform .2s;width:80%}
+.tpl-ov-btn:hover{transform:scale(1.04)}
+.btn-wa-tpl{background:linear-gradient(135deg,#25d366,#128c7e);color:white}
+.btn-info-tpl{background:linear-gradient(135deg,var(--ac),var(--ac3));color:white}
+.tpl-info{padding:20px 22px}
+.tpl-type{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ac2);font-weight:600;margin-bottom:5px}
+.tpl-name{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;margin-bottom:5px}
+.tpl-desc{font-size:.78rem;color:var(--t2);line-height:1.6;margin-bottom:12px}
+.tpl-meta{display:flex;align-items:center;justify-content:space-between}
+.tpl-tag{padding:4px 10px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.15);border-radius:100px;font-size:.68rem;color:var(--ac2);font-weight:500}
 
-        /* ============ SECTION COMMONS ============ */
-        .section { padding: 120px 24px; position: relative; }
-        .section-dark { background: var(--black); color: var(--white); }
-        .section-light { background: var(--white); color: var(--black); }
-        .section-gray { background: var(--gray-50); color: var(--black); }
-        .container { max-width: 1280px; margin: 0 auto; }
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        .section-label {
-            font-size: 0.7rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: var(--gray-400);
-            margin-bottom: 20px;
-            display: block;
-            font-weight: 500;
-        }
-        .section-dark .section-label { color: var(--gray-500); }
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4vw, 3.2rem);
-            font-weight: 400;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-        .section-title em {
-            font-style: italic;
-            font-family: var(--font-elegant);
-            font-weight: 300;
-        }
-        .section-desc {
-            font-family: var(--font-elegant);
-            font-size: 1.15rem;
-            color: var(--gray-500);
-            max-width: 560px;
-            margin: 0 auto;
-            line-height: 1.7;
-            font-weight: 300;
-        }
-        .section-dark .section-desc { color: var(--gray-400); }
-        .divider-line {
-            width: 50px;
-            height: 1px;
-            background: var(--gray-300);
-            margin: 24px auto 0;
-        }
-        .section-dark .divider-line { background: var(--gray-700); }
+.mbar{height:26px;background:rgba(255,255,255,.04);border-bottom:1px solid var(--bd);display:flex;align-items:center;padding:0 10px;gap:5px}
+.md{width:6px;height:6px;border-radius:50%;display:inline-block}
+.md1{background:#ff5f57}.md2{background:#ffbd2e}.md3{background:#28c840}
 
-        /* ============ ABOUT / INTRO ============ */
-        .intro-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
-        }
-        .intro-image-wrap {
-            position: relative;
-        }
-        .intro-image-wrap img {
-            width: 100%;
-            height: 550px;
-            object-fit: cover;
-            border-radius: 8px;
-            filter: grayscale(15%);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .intro-image-wrap:hover img {
-            filter: grayscale(0%);
-            transform: scale(1.02);
-        }
-        .intro-image-frame {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            right: -20px;
-            bottom: -20px;
-            border: 1px solid var(--gray-200);
-            border-radius: 8px;
-            z-index: -1;
-            transition: all 0.6s ease;
-        }
-        .intro-image-wrap:hover .intro-image-frame {
-            top: 15px;
-            left: 15px;
-            right: -15px;
-            bottom: -15px;
-        }
-        .intro-text-content h3 {
-            font-family: var(--font-display);
-            font-size: clamp(1.8rem, 3vw, 2.5rem);
-            font-weight: 400;
-            margin-bottom: 24px;
-            line-height: 1.3;
-        }
-        .intro-text-content h3 em {
-            font-family: var(--font-elegant);
-            font-style: italic;
-            font-weight: 300;
-        }
-        .intro-text-content p {
-            font-size: 1rem;
-            line-height: 1.9;
-            color: var(--gray-600);
-            margin-bottom: 18px;
-        }
-        .intro-stats {
-            display: flex;
-            gap: 50px;
-            margin-top: 40px;
-            padding-top: 40px;
-            border-top: 1px solid var(--gray-200);
-        }
-        .intro-stat-num {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--black);
-            line-height: 1;
-        }
-        .intro-stat-label {
-            font-size: 0.75rem;
-            color: var(--gray-500);
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-top: 6px;
-        }
-        @media (max-width: 868px) {
-            .intro-grid { grid-template-columns: 1fr; gap: 50px; }
-            .intro-image-wrap img { height: 400px; }
-        }
+/* STATS */
+.stats{padding:90px 0;background:var(--bg2);border-top:1px solid var(--bd);border-bottom:1px solid var(--bd)}
+.stats-g{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.stat-c{text-align:center;padding:36px 20px;border-radius:22px;background:var(--card);border:1px solid var(--bd);transition:all .4s}
+.stat-c:hover{border-color:var(--bd2);transform:translateY(-4px)}
+.stat-n{font-family:'Space Grotesk',sans-serif;font-size:2.6rem;font-weight:700;background:linear-gradient(135deg,var(--ac2),var(--ac3));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px}
+.stat-l{font-size:.83rem;color:var(--t2)}
+.stat-sl{font-size:.7rem;color:var(--t3);margin-top:3px}
 
-        /* ============ SERVICES ============ */
-        .services-grid {
-            display: grid;
-            gap: 100px;
-        }
-        .service-item {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: center;
-        }
-        .service-item:nth-child(even) .service-image-col { order: 2; }
-        .service-item:nth-child(even) .service-text-col { order: 1; }
+/* TESTIMONIALS */
+.test{padding:130px 0}
+.test-g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.test-c{background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:32px 28px;transition:all .4s;display:flex;flex-direction:column}
+.test-c:hover{border-color:var(--bd2);background:var(--card2);transform:translateY(-4px)}
+.test-stars{display:flex;gap:2px;margin-bottom:18px;color:#fbbf24;font-size:.88rem}
+.test-txt{font-size:.92rem;color:var(--t2);line-height:1.75;flex:1;margin-bottom:20px;font-style:italic}
+.test-auth{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid var(--bd)}
+.test-av{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-weight:700;background:linear-gradient(135deg,var(--ac),var(--ac3));color:white;font-size:.9rem}
+.test-name{font-size:.88rem;font-weight:600}
+.test-role{font-size:.73rem;color:var(--t3)}
 
-        .service-image-col {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-        .service-img {
-            width: 100%;
-            height: 480px;
-            object-fit: cover;
-            border-radius: 10px;
-            filter: grayscale(10%);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .service-item:nth-child(1) .service-img { height: 520px; }
-        .service-item:nth-child(2) .service-img { height: 450px; }
-        .service-item:nth-child(3) .service-img { height: 500px; }
-        .service-item:nth-child(4) .service-img { height: 440px; }
-        .service-item:nth-child(5) .service-img { height: 490px; }
+/* PRICING */
+.price{padding:130px 0}
+.price-g{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:start;max-width:940px;margin:0 auto}
+.price-c{background:var(--card);border:1px solid var(--bd);border-radius:22px;padding:40px 32px;transition:all .4s;position:relative}
+.price-c.feat{background:var(--card2);border-color:var(--ac);box-shadow:0 0 60px var(--acg);transform:scale(1.04)}
+.price-c:hover{border-color:var(--bd2);transform:translateY(-4px)}
+.price-c.feat:hover{transform:scale(1.04) translateY(-4px)}
+.price-pop{position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:4px 16px;background:linear-gradient(135deg,var(--ac),var(--ac3));color:white;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;border-radius:100px;white-space:nowrap}
+.price-medal{font-size:1.8rem;margin-bottom:14px}
+.price-name{font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;margin-bottom:5px}
+.price-desc{font-size:.8rem;color:var(--t3);margin-bottom:24px;line-height:1.6}
+.price-pr{display:flex;align-items:baseline;gap:4px;margin-bottom:24px}
+.price-cur{font-size:1.2rem;font-weight:600;color:var(--t2)}
+.price-amt{font-family:'Space Grotesk',sans-serif;font-size:3.2rem;font-weight:700;letter-spacing:-.04em;line-height:1}
+.price-div{height:1px;background:var(--bd);margin-bottom:20px}
+.price-ft{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);font-weight:600;margin-bottom:12px}
+.price-fl{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
+.price-fl li{font-size:.83rem;color:var(--t2);display:flex;align-items:flex-start;gap:9px;line-height:1.5}
+.price-fl li::before{content:'✓';color:var(--ac2);font-weight:700;font-size:.73rem;margin-top:2px;flex-shrink:0}
+.price-bf{padding:12px;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.1);border-radius:10px;margin-bottom:22px}
+.price-bfl{font-size:.66rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ac2);font-weight:600;margin-bottom:3px}
+.price-bft{font-size:.78rem;color:var(--t2);line-height:1.5}
+.btn-wa-price{width:100%;padding:14px;border-radius:12px;font-size:.88rem;font-weight:700;cursor:pointer;transition:all .3s;border:none;text-align:center;text-decoration:none;display:block;font-family:'Inter',sans-serif}
+.btn-wa-green{background:linear-gradient(135deg,#25d366,#128c7e);color:white;box-shadow:0 4px 20px rgba(37,211,102,.25)}
+.btn-wa-green:hover{box-shadow:0 8px 30px rgba(37,211,102,.4);transform:translateY(-2px)}
+.btn-wa-outline{background:transparent;color:var(--t1);border:1px solid var(--bd)}
+.btn-wa-outline:hover{border-color:var(--bd2);background:var(--card)}
 
-        .service-image-col:hover .service-img {
-            transform: scale(1.05);
-            filter: grayscale(0%);
-        }
-        .service-image-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.2) 100%);
-            border-radius: 10px;
-            pointer-events: none;
-        }
-        .service-number {
-            font-family: var(--font-display);
-            font-size: 5rem;
-            font-weight: 700;
-            color: var(--gray-100);
-            line-height: 1;
-            margin-bottom: 16px;
-        }
-        .service-text-col h3 {
-            font-family: var(--font-display);
-            font-size: clamp(1.6rem, 2.8vw, 2.2rem);
-            font-weight: 500;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-        .service-text-col p {
-            font-size: 1rem;
-            line-height: 1.9;
-            color: var(--gray-600);
-            margin-bottom: 32px;
-        }
-        .service-features {
-            list-style: none;
-            margin-bottom: 36px;
-        }
-        .service-features li {
-            font-size: 0.9rem;
-            color: var(--gray-600);
-            padding: 8px 0;
-            border-bottom: 1px solid var(--gray-100);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .service-features li::before {
-            content: '✦';
-            font-size: 0.6rem;
-            color: var(--gray-400);
-        }
-        .btn-book {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 36px;
-            background: var(--black);
-            color: var(--white);
-            text-decoration: none;
-            font-size: 0.78rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-radius: 50px;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-book::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--gray-800);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 50px;
-        }
-        .btn-book:hover::before { transform: scaleX(1); transform-origin: left; }
-        .btn-book span, .btn-book svg { position: relative; z-index: 1; }
-        .btn-book:hover { box-shadow: 0 15px 40px rgba(0,0,0,0.2); transform: translateY(-2px); }
-        .btn-book svg {
-            width: 16px;
-            height: 16px;
-            transition: transform 0.4s ease;
-        }
-        .btn-book:hover svg { transform: translateX(4px); }
+/* WHY */
+.why{padding:75px 0;background:var(--bg2);border-top:1px solid var(--bd)}
+.why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.why-i{display:flex;align-items:center;gap:10px;padding:14px 18px;background:var(--card);border:1px solid var(--bd);border-radius:12px;transition:all .3s}
+.why-i:hover{border-color:var(--bd2);background:var(--card2)}
+.why-t{font-size:.83rem;font-weight:500;color:var(--t2)}
 
-        @media (max-width: 868px) {
-            .service-item {
-                grid-template-columns: 1fr;
-                gap: 36px;
-            }
-            .service-item:nth-child(even) .service-image-col { order: 0; }
-            .service-item:nth-child(even) .service-text-col { order: 0; }
-            .service-img,
-            .service-item:nth-child(1) .service-img,
-            .service-item:nth-child(2) .service-img,
-            .service-item:nth-child(3) .service-img,
-            .service-item:nth-child(4) .service-img,
-            .service-item:nth-child(5) .service-img {
-                height: 320px;
-            }
-            .service-number { font-size: 3rem; }
-        }
+/* FAQ */
+.faq{padding:100px 0}
+.faq-list{max-width:700px;margin:0 auto;display:flex;flex-direction:column;gap:11px}
+.faq-i{background:var(--card);border:1px solid var(--bd);border-radius:14px;overflow:hidden;transition:border-color .3s}
+.faq-i:hover{border-color:var(--bd2)}
+.faq-q{width:100%;padding:20px 24px;background:none;border:none;color:var(--t1);font-size:.93rem;font-weight:550;text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;font-family:'Inter',sans-serif}
+.faq-ic{width:22px;height:22px;border-radius:6px;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:.83rem;color:var(--t3);transition:all .3s;flex-shrink:0}
+.faq-i.open .faq-ic{background:var(--ac);color:white;transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s}
+.faq-ai{padding:0 24px 20px;font-size:.85rem;color:var(--t2);line-height:1.75}
 
-        /* ============ GALLERY ============ */
-        .gallery-masonry {
-            columns: 3;
-            column-gap: 20px;
-        }
-        .gallery-item {
-            break-inside: avoid;
-            margin-bottom: 20px;
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        .gallery-item img {
-            width: 100%;
-            display: block;
-            border-radius: 8px;
-            filter: grayscale(15%);
-            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .gallery-item:hover img {
-            transform: scale(1.06);
-            filter: grayscale(0%);
-        }
-        .gallery-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            border-radius: 8px;
-            display: flex;
-            align-items: flex-end;
-            padding: 24px;
-        }
-        .gallery-item:hover .gallery-overlay { opacity: 1; }
-        .gallery-overlay span {
-            color: var(--white);
-            font-family: var(--font-elegant);
-            font-size: 1.1rem;
-            font-weight: 400;
-            letter-spacing: 1px;
-        }
-        @media (max-width: 768px) {
-            .gallery-masonry { columns: 2; column-gap: 12px; }
-            .gallery-item { margin-bottom: 12px; }
-        }
-        @media (max-width: 480px) {
-            .gallery-masonry { columns: 1; }
-        }
+/* CTA CONTACT SECTION */
+.cta-contact{padding:100px 0;background:linear-gradient(180deg,transparent,rgba(99,102,241,.03),transparent)}
+.cta-box{max-width:700px;margin:0 auto;text-align:center;background:var(--card);border:1px solid var(--bd);border-radius:32px;padding:64px 48px;position:relative;overflow:hidden}
+.cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ac),var(--ac3),var(--ac4))}
+.cta-box-glow{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:300px;background:radial-gradient(ellipse,rgba(99,102,241,.08),transparent);pointer-events:none}
+.cta-box-t{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-.03em;margin-bottom:14px;position:relative;z-index:2}
+.cta-box-s{font-size:1rem;color:var(--t2);margin-bottom:36px;line-height:1.7;position:relative;z-index:2}
+.cta-btns{display:flex;flex-direction:column;align-items:center;gap:14px;position:relative;z-index:2}
+.cta-btn-wa{display:flex;align-items:center;justify-content:center;gap:12px;padding:20px 44px;background:linear-gradient(135deg,#25d366,#128c7e);color:white;font-size:1.05rem;font-weight:700;border-radius:16px;text-decoration:none;transition:all .4s;box-shadow:0 4px 30px rgba(37,211,102,.3),inset 0 1px 0 rgba(255,255,255,.15);width:100%;max-width:420px;font-family:'Inter',sans-serif;letter-spacing:-.01em}
+.cta-btn-wa:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(37,211,102,.5)}
+.cta-btn-call{display:flex;align-items:center;justify-content:center;gap:12px;padding:18px 44px;background:var(--card2);color:var(--t1);font-size:.95rem;font-weight:600;border-radius:16px;text-decoration:none;border:1px solid var(--bd2);transition:all .3s;width:100%;max-width:420px;font-family:'Inter',sans-serif}
+.cta-btn-call:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.cta-btn-info{display:flex;align-items:center;justify-content:center;gap:12px;padding:18px 44px;background:linear-gradient(135deg,var(--ac),var(--ac3));color:white;font-size:.95rem;font-weight:600;border-radius:16px;text-decoration:none;transition:all .3s;width:100%;max-width:420px;font-family:'Inter',sans-serif;box-shadow:0 4px 20px var(--acg)}
+.cta-btn-info:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(99,102,241,.4)}
+.cta-scar{margin-top:22px;display:flex;align-items:center;justify-content:center;gap:8px;font-size:.8rem;color:var(--t3);position:relative;z-index:2}
+.sc-dot{width:6px;height:6px;border-radius:50%;background:#f97316;animation:pls 1.5s ease-in-out infinite}
+.cta-or{display:flex;align-items:center;gap:12px;width:100%;max-width:420px;margin:4px 0}
+.cta-or span{flex:1;height:1px;background:var(--bd)}
+.cta-or p{font-size:.75rem;color:var(--t3);white-space:nowrap}
 
-        /* ============ WHY CHOOSE US ============ */
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-        .why-card {
-            padding: 48px 36px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.06);
-            border-radius: 16px;
-            backdrop-filter: blur(10px);
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        .why-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        .why-card:hover::before { opacity: 1; }
-        .why-card:hover {
-            background: rgba(255,255,255,0.06);
-            border-color: rgba(255,255,255,0.12);
-            transform: translateY(-8px);
-        }
-        .why-icon {
-            width: 52px;
-            height: 52px;
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 28px;
-            font-size: 1.3rem;
-            transition: all 0.5s ease;
-        }
-        .why-card:hover .why-icon {
-            background: rgba(255,255,255,0.06);
-            transform: scale(1.1);
-        }
-        .why-card h4 {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            font-weight: 500;
-            color: var(--white);
-            margin-bottom: 14px;
-        }
-        .why-card p {
-            font-size: 0.92rem;
-            color: var(--gray-500);
-            line-height: 1.7;
-        }
-        @media (max-width: 968px) {
-            .why-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 580px) {
-            .why-grid { grid-template-columns: 1fr; }
-            .why-card { padding: 36px 28px; }
-        }
+/* FOOTER */
+.foot{border-top:1px solid var(--bd);padding:60px 0 30px;background:var(--bg2)}
+.foot-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;margin-bottom:40px}
+.foot-logo{display:flex;align-items:center;gap:10px}
+.foot-logo img{width:34px;height:34px;object-fit:contain;border-radius:10px}
+.foot-logo span{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#fff,rgba(255,255,255,.7));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.foot-links{display:flex;gap:24px;flex-wrap:wrap}
+.foot-links a{color:var(--t2);text-decoration:none;font-size:.85rem;transition:color .3s}
+.foot-links a:hover{color:var(--t1)}
+.foot-wa{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:linear-gradient(135deg,#25d366,#128c7e);color:white;border-radius:10px;text-decoration:none;font-size:.85rem;font-weight:600;transition:all .3s;font-family:'Inter',sans-serif}
+.foot-wa:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(37,211,102,.4)}
+.foot-bot{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid var(--bd);flex-wrap:wrap;gap:12px}
+.foot-copy{font-size:.78rem;color:var(--t3)}
+.foot-tag{font-size:.78rem;color:var(--ac2);font-style:italic}
 
-        /* ============ TESTIMONIALS ============ */
-        .testimonials-track {
-            display: flex;
-            gap: 30px;
-            overflow: hidden;
-        }
-        .testimonial-card {
-            min-width: calc(33.333% - 20px);
-            padding: 48px 36px;
-            background: var(--white);
-            border: 1px solid var(--gray-100);
-            border-radius: 16px;
-            transition: all 0.5s ease;
-            position: relative;
-        }
-        .testimonial-card:hover {
-            box-shadow: 0 30px 60px rgba(0,0,0,0.06);
-            transform: translateY(-6px);
-        }
-        .testimonial-quote {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            color: var(--gray-200);
-            line-height: 1;
-            margin-bottom: 16px;
-        }
-        .testimonial-text {
-            font-family: var(--font-elegant);
-            font-size: 1.1rem;
-            color: var(--gray-600);
-            line-height: 1.8;
-            margin-bottom: 28px;
-            font-style: italic;
-        }
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-        .testimonial-avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: var(--gray-100);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--gray-500);
-        }
-        .testimonial-name {
-            font-weight: 600;
-            font-size: 0.92rem;
-            color: var(--black);
-        }
-        .testimonial-role {
-            font-size: 0.78rem;
-            color: var(--gray-400);
-            margin-top: 2px;
-        }
-        .testimonial-stars {
-            color: var(--gray-800);
-            font-size: 0.72rem;
-            letter-spacing: 3px;
-            margin-bottom: 20px;
-        }
-        @media (max-width: 968px) {
-            .testimonial-card { min-width: calc(50% - 15px); }
-        }
-        @media (max-width: 600px) {
-            .testimonial-card { min-width: 100%; }
-        }
+/* WHATSAPP FLOAT */
+.wa-float{position:fixed;bottom:26px;right:26px;display:flex;flex-direction:column;align-items:flex-end;gap:10px;z-index:999}
+.wa-float-main{width:58px;height:58px;background:linear-gradient(135deg,#25d366,#128c7e);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;color:white;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.5);transition:all .3s;animation:wap 3s ease-in-out infinite}
+.wa-float-main:hover{transform:scale(1.1) translateY(-2px)}
+@keyframes wap{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.5)}50%{box-shadow:0 4px 35px rgba(37,211,102,.7)}}
+.wa-float-label{background:rgba(0,0,0,.8);backdrop-filter:blur(10px);color:white;padding:6px 12px;border-radius:8px;font-size:.73rem;font-weight:600;white-space:nowrap;border:1px solid rgba(255,255,255,.1);font-family:'Inter',sans-serif}
 
-        /* ============ CTA SECTION ============ */
-        .cta-section {
-            padding: 140px 24px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            background: var(--black);
-        }
-        .cta-bg-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: var(--font-display);
-            font-size: clamp(5rem, 15vw, 14rem);
-            font-weight: 700;
-            color: rgba(255,255,255,0.02);
-            white-space: nowrap;
-            pointer-events: none;
-            letter-spacing: -5px;
-        }
-        .cta-content {
-            position: relative;
-            z-index: 1;
-        }
-        .cta-title {
-            font-family: var(--font-display);
-            font-size: clamp(2rem, 4.5vw, 3.5rem);
-            font-weight: 400;
-            color: var(--white);
-            margin-bottom: 22px;
-            line-height: 1.2;
-        }
-        .cta-title em {
-            font-family: var(--font-elegant);
-            font-style: italic;
-            font-weight: 300;
-        }
-        .cta-desc {
-            font-family: var(--font-elegant);
-            font-size: 1.15rem;
-            color: var(--gray-500);
-            margin-bottom: 44px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.7;
-        }
-        .btn-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 18px 50px;
-            background: var(--white);
-            color: var(--black);
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-radius: 50px;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        .btn-cta::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: var(--gray-200);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 50px;
-        }
-        .btn-cta:hover::before { transform: scaleX(1); transform-origin: left; }
-        .btn-cta span, .btn-cta svg { position: relative; z-index: 1; }
-        .btn-cta:hover { box-shadow: 0 20px 60px rgba(255,255,255,0.1); transform: translateY(-2px); }
+.rv{opacity:0;transform:translateY(28px);transition:all .7s cubic-bezier(.23,1,.32,1)}
+.rv.vis{opacity:1;transform:translateY(0)}
 
-        /* ============ FOOTER ============ */
-        .footer {
-            background: var(--black);
-            color: var(--white);
-            padding: 80px 24px 0;
-            border-top: 1px solid rgba(255,255,255,0.06);
-        }
-        .footer-grid {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 60px;
-            padding-bottom: 60px;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .footer-brand-logo {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 24px;
-        }
-        .footer-brand-logo img {
-            width: auto;
-            height: 52px;
-            max-width: 160px;
-            border-radius: 8px;
-            object-fit: contain;
-        }
-        .footer-brand-logo span {
-            font-family: var(--font-display);
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-        .footer-brand-desc {
-            font-size: 0.92rem;
-            color: var(--gray-500);
-            line-height: 1.8;
-            max-width: 320px;
-        }
-        .footer-col h5 {
-            font-family: var(--font-display);
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            color: var(--white);
-        }
-        .footer-col ul {
-            list-style: none;
-        }
-        .footer-col ul li {
-            margin-bottom: 14px;
-        }
-        .footer-col ul li a {
-            text-decoration: none;
-            color: var(--gray-500);
-            font-size: 0.88rem;
-            transition: color 0.3s ease;
-        }
-        .footer-col ul li a:hover { color: var(--white); }
-        .footer-contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 14px;
-            color: var(--gray-500);
-            font-size: 0.88rem;
-        }
-        .footer-contact-item svg {
-            width: 16px;
-            height: 16px;
-            flex-shrink: 0;
-        }
-        .footer-bottom {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 28px 0;
-            font-size: 0.78rem;
-            color: var(--gray-600);
-        }
-        @media (max-width: 868px) {
-            .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
-        }
-        @media (max-width: 580px) {
-            .footer-grid { grid-template-columns: 1fr; gap: 36px; }
-            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
-        }
+/* SECRET PANEL */
+#secOv{display:none;position:fixed;inset:0;z-index:200000;background:rgba(0,0,0,.96);backdrop-filter:blur(20px);overflow:hidden}
+#secOv.showPw{display:flex;align-items:center;justify-content:center}
+#secOv.showAd{display:block;overflow-y:auto}
+.pw-box{text-align:center;max-width:400px;width:90%;padding:44px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:22px}
+.pw-ic{width:56px;height:56px;background:linear-gradient(135deg,#6366f1,#8b5cf6);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 22px}
+.pw-t{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:700;margin-bottom:7px}
+.pw-s{font-size:.83rem;color:rgba(245,245,247,.5);margin-bottom:28px}
+.pw-inp{width:100%;padding:13px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;color:#f5f5f7;font-size:.93rem;font-family:'Inter',sans-serif;outline:none;margin-bottom:10px;transition:all .3s}
+.pw-inp:focus{border-color:rgba(99,102,241,.6);box-shadow:0 0 0 3px rgba(99,102,241,.15)}
+.pw-err{color:#ef4444;font-size:.78rem;margin-bottom:10px;display:none}
+.pw-btn{width:100%;padding:13px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;border:none;border-radius:12px;font-size:.93rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif}
+.pw-cl{width:100%;padding:11px;background:transparent;color:rgba(245,245,247,.4);border:none;font-size:.83rem;cursor:pointer;font-family:'Inter',sans-serif;margin-top:7px}
+.ad-panel{max-width:1080px;margin:0 auto;padding:36px 22px}
+.ad-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:36px;flex-wrap:wrap;gap:14px}
+.ad-logo{display:flex;align-items:center;gap:12px}
+.ad-logo img{width:42px;height:42px;border-radius:12px}
+.ad-lt{font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700}
+.ad-ls{font-size:.73rem;color:rgba(245,245,247,.4)}
+.ad-cl{padding:9px 18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(245,245,247,.7);font-size:.83rem;cursor:pointer;font-family:'Inter',sans-serif}
+.ad-info{padding:14px 18px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.15);border-radius:12px;margin-bottom:28px;font-size:.8rem;color:rgba(245,245,247,.6);line-height:1.7}
+.p-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:18px;overflow:hidden;margin-bottom:18px;transition:border-color .3s}
+.p-card:hover{border-color:rgba(99,102,241,.3)}
+.p-head{padding:18px 22px;border-bottom:1px solid rgba(255,255,255,.06);display:flex;align-items:center;gap:12px}
+.p-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.p-nm{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.93rem}
+.p-pk{font-size:.7rem;color:rgba(245,245,247,.4);margin-top:1px}
+.p-cp{margin-left:auto;padding:7px 15px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:white;border:none;border-radius:8px;font-size:.73rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;white-space:nowrap;flex-shrink:0;transition:transform .2s}
+.p-cp:hover{transform:scale(1.05)}
+.p-body{padding:18px 22px}
+.p-ta{width:100%;height:190px;background:rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.06);border-radius:10px;color:rgba(245,245,247,.7);font-size:.7rem;font-family:'Inter',sans-serif;padding:12px;resize:vertical;line-height:1.65;outline:none}
+#cpToast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:linear-gradient(135deg,#22c55e,#16a34a);color:white;padding:12px 26px;border-radius:100px;font-size:.85rem;font-weight:600;font-family:'Inter',sans-serif;z-index:999999;transition:transform .4s cubic-bezier(.23,1,.32,1);box-shadow:0 8px 30px rgba(34,197,94,.4);pointer-events:none}
+#cpToast.show{transform:translateX(-50%) translateY(0)}
 
-        /* ============ SCROLL ANIMATIONS ============ */
-        .reveal {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-60px);
-            transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .reveal-left.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(60px);
-            transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .reveal-right.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        .reveal-scale {
-            opacity: 0;
-            transform: scale(0.9);
-            transition: all 0.9s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .reveal-scale.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        /* ============ LIGHTBOX ============ */
-        .lightbox {
-            position: fixed;
-            inset: 0;
-            z-index: 10000;
-            background: rgba(0,0,0,0.95);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-            cursor: pointer;
-        }
-        .lightbox.open {
-            opacity: 1;
-            visibility: visible;
-        }
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 6px;
-            transform: scale(0.9);
-            transition: transform 0.4s ease;
-        }
-        .lightbox.open img { transform: scale(1); }
-        .lightbox-close {
-            position: absolute;
-            top: 24px;
-            right: 32px;
-            color: var(--white);
-            font-size: 2rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-            font-family: var(--font-body);
-            font-weight: 300;
-            transition: transform 0.3s ease;
-        }
-        .lightbox-close:hover { transform: rotate(90deg); }
-
-        /* ============ PARALLAX ============ */
-        .parallax-section {
-            position: relative;
-            height: 50vh;
-            min-height: 350px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .parallax-bg {
-            position: absolute;
-            inset: -100px;
-            background-size: cover;
-            background-position: center;
-            filter: grayscale(30%);
-        }
-        .parallax-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0,0,0,0.6);
-        }
-        .parallax-content {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            color: var(--white);
-        }
-        .parallax-content h2 {
-            font-family: var(--font-display);
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            font-weight: 400;
-            margin-bottom: 10px;
-        }
-        .parallax-content h2 em {
-            font-family: var(--font-elegant);
-            font-style: italic;
-            font-weight: 300;
-        }
-        .parallax-content p {
-            font-family: var(--font-elegant);
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.6);
-        }
-
-        /* ============ MISC ============ */
-        .section { position: relative; }
-        .section-bg-pattern {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        .section-bg-pattern::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 500px;
-            height: 500px;
-            border: 1px solid rgba(0,0,0,0.03);
-            border-radius: 50%;
-        }
-
-        /* Back to top */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 48px;
-            height: 48px;
-            background: var(--black);
-            color: var(--white);
-            border: none;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 999;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-        }
-        .back-to-top.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .back-to-top:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
-        }
-        .back-to-top svg { width: 18px; height: 18px; }
-
-        /* ============ RESPONSIVE FINE TUNE ============ */
-        @media (max-width: 768px) {
-            .section { padding: 80px 20px; }
-            .section-header { margin-bottom: 50px; }
-            .services-grid { gap: 70px; }
-            .hero-logo { height: 110px; max-width: 240px; }
-            .hero-badge { font-size: 0.6rem; letter-spacing: 3px; }
-        }
-        @media (max-width: 480px) {
-            .section { padding: 60px 16px; }
-            .hero-buttons { flex-direction: column; align-items: center; }
-            .intro-stats { gap: 30px; }
-            .intro-stat-num { font-size: 2rem; }
-        }
-    </style>
+@media(max-width:1024px){
+  .srv-g,.tpl-g{grid-template-columns:repeat(2,1fr)}
+  .price-g{grid-template-columns:1fr;max-width:420px;margin:0 auto}
+  .price-c.feat{transform:none}.price-c.feat:hover{transform:translateY(-4px)}
+  .stats-g{grid-template-columns:repeat(2,1fr)}
+  .why-g{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .nav{padding:0 22px}.nav-links{display:none}.mob-tog{display:flex}.nav-cta{display:none}
+  .nav-links.mob-open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(5,5,7,.97);backdrop-filter:blur(40px);padding:22px;border-bottom:1px solid var(--bd);gap:14px;z-index:100}
+  .hero{padding:110px 22px 60px}.sc{padding:0 22px}
+  .hm{flex-direction:column;gap:22px}
+  .srv-g,.tpl-g,.test-g,.why-g{grid-template-columns:1fr}
+  .foot-inner{flex-direction:column;align-items:flex-start}
+  .foot-bot{flex-direction:column;align-items:flex-start}
+  .fc,.cur,.dot{display:none}
+  .stats-g{grid-template-columns:1fr 1fr}
+  .cta-box{padding:40px 24px}
+}
+</style>
 </head>
 <body>
 
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <img src="https://i.imgur.com/WQHSNRf.jpeg" alt="Art of Occasions" class="preloader-logo">
-        <div class="preloader-bar"></div>
-    </div>
+<!-- LOADER -->
+<div class="loader" id="loader">
+<img src="https://i.imgur.com/XRLsmbg.jpeg" alt="NEXORA">
+<div class="lbw"><div class="lb"></div></div>
+</div>
 
-    <!-- Custom Cursor -->
-    <div class="custom-cursor" id="cursor"></div>
+<!-- CURSOR -->
+<div class="cur" id="cur"></div>
+<div class="dot" id="dotEl"></div>
 
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-        <a href="#hero" class="nav-logo">
-            <img src="https://i.imgur.com/WQHSNRf.jpeg" alt="Art of Occasions Logo">
-            <span class="nav-logo-text">Art of Occasions</span>
-        </a>
-        <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#testimonials">Reviews</a></li>
-            <li><a href="https://wa.me/96181139230" target="_blank" class="nav-cta">Book Now</a></li>
-        </ul>
-        <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+<!-- BG -->
+<div class="bgG"></div>
+<div class="orb o1"></div>
+<div class="orb o2"></div>
+<div class="orb o3"></div>
+<div class="glow" id="glowEl"></div>
+<div class="pts" id="parts"></div>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#why">Why Us</a>
-        <a href="#testimonials">Reviews</a>
-        <a href="https://wa.me/96181139230" target="_blank">Book Now</a>
-    </div>
+<!-- NAV -->
+<nav class="nav" id="nav">
+<a href="#" class="nav-logo"><img src="https://i.imgur.com/XRLsmbg.jpeg" alt="N"><span>NEXORA</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#services">Services</a></li>
+<li><a href="#templates">Templates</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<div class="nav-cta">
+<a href="#pricing" class="btn-n btn-ng">Packages</a>
+<a href="https://wa.me/96176062928?text=Hi%20NEXORA!%20I%20want%20to%20start%20a%20project." target="_blank" rel="noopener" class="btn-n btn-np">💬 WhatsApp Us</a>
+</div>
+<button class="mob-tog" id="mobTog" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-bg">
-            <img src="https://i.imgur.com/uQgyKtv.jpeg" alt="Luxury Event Decoration" class="hero-bg-img">
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="floating-shapes">
-            <div class="float-shape"></div>
-            <div class="float-shape"></div>
-            <div class="float-shape"></div>
-            <div class="float-shape"></div>
-            <div class="float-shape"></div>
-            <div class="float-shape"></div>
-        </div>
-        <div class="hero-content">
-            <img src="https://i.imgur.com/WQHSNRf.jpeg" alt="Art of Occasions" class="hero-logo">
-            <span class="hero-badge">Premium Event Design</span>
-            <h1 class="hero-title">Turning Every Occasion<br>Into a <em>Beautiful Memory</em></h1>
-            <p class="hero-sub">We craft extraordinary celebrations with exquisite attention to detail, transforming your most cherished moments into timeless works of art.</p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn-primary"><span>Explore Services</span></a>
-                <a href="https://wa.me/96181139230" target="_blank" class="btn-secondary">Book a Consultation</a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-    </section>
+<!-- HERO -->
+<section class="hero">
+<div class="hl"></div>
+<div class="fcs">
+<div class="fc fc1"><div class="fci" style="background:rgba(99,102,241,.12)">📈</div><div class="fct">Conversion</div><div class="fcv" style="color:#22c55e">+340%</div></div>
+<div class="fc fc2"><div class="fci" style="background:rgba(139,92,246,.12)">⚡</div><div class="fct">Performance</div><div class="fcv">99/100</div></div>
+<div class="fc fc3"><div class="fci" style="background:rgba(6,182,212,.12)">🎯</div><div class="fct">Satisfaction</div><div class="fcv" style="color:var(--ac2)">98%</div></div>
+</div>
+<div class="hero-c">
+<div class="hbadge"><div class="bdot"></div><span>3 project slots remaining this month</span></div>
+<h1 class="ht">We Build Websites<br>That <span class="gr">Drive Growth</span></h1>
+<p class="hs">Premium web development, AI solutions, and e-commerce systems engineered to transform your digital presence — starting at just $29.</p>
+<div class="hacts">
+<a href="https://wa.me/96176062928?text=Hi%20NEXORA!%20I'm%20interested%20in%20a%20website.%20Can%20you%20share%20details?" target="_blank" rel="noopener" class="btn-wa">💬 Chat on WhatsApp</a>
+<a href="tel:+96176062928" class="btn-wa-2">📞 Call Us Now</a>
+</div>
+<div class="hm">
+<div><div class="hmv">200+</div><div class="hml">Projects Delivered</div></div>
+<div><div class="hmv">98%</div><div class="hml">Satisfaction</div></div>
+<div><div class="hmv">From $29</div><div class="hml">Premium Sites</div></div>
+</div>
+</div>
+</section>
 
-    <!-- About / Intro Section -->
-    <section class="section section-light" id="about">
-        <div class="container">
-            <div class="intro-grid">
-                <div class="intro-image-wrap reveal-left">
-                    <img src="https://i.imgur.com/VusrOeO.jpeg" alt="Art of Occasions Event Setup">
-                    <div class="intro-image-frame"></div>
-                </div>
-                <div class="intro-text-content reveal-right">
-                    <span class="section-label">Our Story</span>
-                    <h3>Where Creativity Meets <em>Elegance</em></h3>
-                    <p>At Art of Occasions, we believe every celebration deserves to be extraordinary. We blend artistic vision with meticulous craftsmanship to create unforgettable experiences that reflect the uniqueness of each client.</p>
-                    <p>From intimate birthday gatherings to grand celebrations, our team transforms spaces into breathtaking environments that captivate every guest and leave lasting impressions.</p>
-                    <div class="intro-stats">
-                        <div>
-                            <div class="intro-stat-num">500+</div>
-                            <div class="intro-stat-label">Events Styled</div>
-                        </div>
-                        <div>
-                            <div class="intro-stat-num">100%</div>
-                            <div class="intro-stat-label">Client Satisfaction</div>
-                        </div>
-                        <div>
-                            <div class="intro-stat-num">5+</div>
-                            <div class="intro-stat-label">Years of Excellence</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- TRUSTED -->
+<section class="trusted">
+<div class="sc">
+<div class="trl">Trusted by companies worldwide</div>
+<div class="tlogos"><span class="tlogo">Meridian</span><span class="tlogo">Arclight</span><span class="tlogo">Vertex</span><span class="tlogo">Luminary</span><span class="tlogo">Catalyst</span></div>
+</div>
+</section>
 
-    <!-- Parallax Divider -->
-    <div class="parallax-section" data-parallax>
-        <div class="parallax-bg" style="background-image: url('https://i.imgur.com/ljOl2Bs.jpeg');" data-parallax-bg></div>
-        <div class="parallax-overlay"></div>
-        <div class="parallax-content reveal">
-            <h2>Crafted with <em>Passion</em></h2>
-            <p>Every detail designed to perfection</p>
-        </div>
-    </div>
+<!-- SERVICES -->
+<section class="srv" id="services">
+<div class="sc">
+<div class="sh rv"><div class="sl">What We Do</div><h2 class="st">End-to-End Digital Solutions</h2><p class="sd">From concept to launch — we build experiences that drive measurable business results.</p></div>
+<div class="srv-g">
+<div class="srv-c rv"><div class="si" style="background:rgba(99,102,241,.12)">🌐</div><h3 class="srv-t">Web Development</h3><p class="srv-d">High-performance, conversion-optimized websites built with modern technology.</p><ul class="srv-f"><li>Custom Development</li><li>Mobile Responsive</li><li>Fast Loading & SEO</li><li>WhatsApp Integration</li></ul></div>
+<div class="srv-c rv"><div class="si" style="background:rgba(139,92,246,.12)">🤖</div><h3 class="srv-t">AI Solutions</h3><p class="srv-d">AI chatbots and smart automation that work around the clock for your business.</p><ul class="srv-f"><li>AI Chatbot</li><li>Smart Recommendations</li><li>Process Automation</li><li>Data Analytics</li></ul></div>
+<div class="srv-c rv"><div class="si" style="background:rgba(6,182,212,.12)">🛒</div><h3 class="srv-t">E-Commerce</h3><p class="srv-d">Online stores with seamless WhatsApp ordering and payment systems.</p><ul class="srv-f"><li>WhatsApp Orders</li><li>Product Showcases</li><li>Secure Payments</li><li>Inventory Management</li></ul></div>
+<div class="srv-c rv"><div class="si" style="background:rgba(236,72,153,.12)">🎨</div><h3 class="srv-t">Premium Design</h3><p class="srv-d">Stunning interfaces with advanced 2D and 3D effects that impress visitors.</p><ul class="srv-f"><li>Custom Premium Design</li><li>2D & 3D Effects</li><li>Smooth Animations</li><li>Interactive UX</li></ul></div>
+<div class="srv-c rv"><div class="si" style="background:rgba(34,197,94,.12)">📊</div><h3 class="srv-t">SEO & Performance</h3><p class="srv-d">Technical SEO and speed optimization that ranks you on Google.</p><ul class="srv-f"><li>SEO Setup</li><li>Google Maps Integration</li><li>Speed Optimization</li><li>Social Media Links</li></ul></div>
+<div class="srv-c rv"><div class="si" style="background:rgba(251,146,60,.12)">🚀</div><h3 class="srv-t">Ongoing Support</h3><p class="srv-d">We stay with you after launch to ensure everything keeps performing.</p><ul class="srv-f"><li>Priority Support</li><li>Performance Monitoring</li><li>Content Updates</li><li>Technical Help</li></ul></div>
+</div>
+</div>
+</section>
 
-    <!-- Services Section -->
-    <section class="section section-light" id="services">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">What We Offer</span>
-                <h2 class="section-title">Our Premium <em>Services</em></h2>
-                <p class="section-desc">Each service is thoughtfully designed to exceed expectations, combining creativity with luxury to make your occasion truly remarkable.</p>
-                <div class="divider-line"></div>
-            </div>
+<!-- TEMPLATES -->
+<section class="tpls" id="templates">
+<div class="sc">
+<div class="sh rv"><div class="sl">Live Templates</div><h2 class="st">Websites for Every Industry</h2><p class="sd">Hover on any template to order it directly on WhatsApp or get more details.</p></div>
+<div class="tpl-tabs rv">
+<button class="tpl-tab active" data-f="all">All</button>
+<button class="tpl-tab" data-f="restaurant">Restaurant</button>
+<button class="tpl-tab" data-f="ecommerce">E-Commerce</button>
+<button class="tpl-tab" data-f="agency">Agency</button>
+<button class="tpl-tab" data-f="medical">Medical</button>
+<button class="tpl-tab" data-f="fitness">Fitness</button>
+<button class="tpl-tab" data-f="beauty">Beauty</button>
+<button class="tpl-tab" data-f="education">Education</button>
+</div>
+<div class="tpl-g">
 
-            <div class="services-grid">
-                <!-- Service 1 -->
-                <div class="service-item">
-                    <div class="service-image-col reveal-left">
-                        <img src="https://i.imgur.com/uQgyKtv.jpeg" alt="Children's Party Decorations" class="service-img" loading="lazy">
-                        <div class="service-image-overlay"></div>
-                    </div>
-                    <div class="service-text-col reveal-right">
-                        <span class="service-number">01</span>
-                        <h3>Children's Parties</h3>
-                        <p>Create a magical world for your little ones with our enchanting party decorations. From whimsical themes for girls to adventurous setups for boys, we design every detail to spark joy and wonder in young hearts.</p>
-                        <ul class="service-features">
-                            <li>Custom themed decorations</li>
-                            <li>Balloon artistry & installations</li>
-                            <li>Character-inspired setups</li>
-                            <li>Interactive decor elements</li>
-                        </ul>
-                        <a href="https://wa.me/96181139230" target="_blank" class="btn-book">
-                            <span>Book Your Service</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                    </div>
-                </div>
+<div class="tpl-c vis" data-cat="restaurant">
+<div class="tpl-ov">
+<button class="tpl-ov-btn btn-wa-tpl" onclick="waOrder('Restaurant Website')">💬 Order on WhatsApp</button>
+<button class="tpl-ov-btn btn-info-tpl" onclick="waInfo('Restaurant Website — $59')">📋 Get More Details</button>
+</div>
+<div class="tpl-prev" style="background:linear-gradient(135deg,#1a0a00,#2d1500)"><div class="tpl-prev-in"><div class="mbar"><span class="md md1"></span><span class="md md2"></span><span class="md md3"></span></div><div style="height:70px;background:linear-gradient(135deg,rgba(251,146,60,.3),rgba(220,50,50,.2));display:flex;align-items:center;justify-content:center;font-size:1.4rem">🍽️</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:10px"><div style="height:44px;border-radius:5px;background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.12);display:flex;align-items:center;justify-content:center">🍕</div><div style="height:44px;border-radius:5px;background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.12);display:flex;align-items:center;justify-content:center">🍔</div><div style="height:44px;border-radius:5px;background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.12);display:flex;align-items:center;justify-content:center">🍜</div><div style="height:44px;border-radius:5px;background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.12);display:flex;align-items:center;justify-content:center">🥗</div><div style="height:44px;border-radius:5px;background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.12);display:flex;align-items:center;justify-content:center">🍰</div><div style="height:44px;border-radius:5px;background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.12);display:flex;align-items:center;justify-content:center">🥤</div></div></div></div>
+<div class="tpl-info"><div class="tpl-type">Restaurant & Food</div><div class="tpl-name">The Grand Kitchen</div><div class="tpl-desc">Menu showcase with WhatsApp ordering system. Hover to order!</div><div class="tpl-meta"><span class="tpl-tag">Business $59</span><span style="font-size:.68rem;color:var(--t3)">Hover to order ↑</span></div></div>
+</div>
 
-                <!-- Service 2 -->
-                <div class="service-item">
-                    <div class="service-image-col reveal-right">
-                        <img src="https://i.imgur.com/VusrOeO.jpeg" alt="Birthday Celebrations" class="service-img" loading="lazy">
-                        <div class="service-image-overlay"></div>
-                    </div>
-                    <div class="service-text-col reveal-left">
-                        <span class="service-number">02</span>
-                        <h3>Birthday Celebrations</h3>
-                        <p>Elevate your birthday into an unforgettable affair. Our bespoke birthday preparations encompass everything from sophisticated table settings to dramatic centerpieces, ensuring every moment is picture-perfect.</p>
-                        <ul class="service-features">
-                            <li>Elegant table arrangements</li>
-                            <li>Custom backdrop designs</li>
-                            <li>Luxury floral compositions</li>
-                            <li>Ambient lighting design</li>
-                        </ul>
-                        <a href="https://wa.me/96181139230" target="_blank" class="btn-book">
-                            <span>Book Your Service</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                    </div>
-                </div>
+<div class="tpl-c vis" data-cat="ecommerce">
+<div class="tpl-ov">
+<button class="tpl-ov-btn btn-wa-tpl" onclick="waOrder('E-Commerce Website')">💬 Order on WhatsApp</button>
+<button class="tpl-ov-btn btn-info-tpl" onclick="waInfo('E-Commerce Website — $99')">📋 Get More Details</button>
+</div>
+<div class="tpl-prev" style="background:linear-gradient(135deg,#0a0a1a,#1a0a2e)"><div class="tpl-prev-in"><div class="mbar"><span class="md md1"></span><span class="md md2"></span><span class="md md3"></span></div><div style="height:28px;background:rgba(99,102,241,.1);display:flex;align-items:center;padding:0 8px"><div style="height:8px;width:8px;border-radius:50%;background:rgba(99,102,241,.5)"></div></div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:8px"><div style="border-radius:5px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.1);overflow:hidden"><div style="height:44px;display:flex;align-items:center;justify-content:center;background:rgba(99,102,241,.08)">👗</div><div style="padding:4px"><div style="height:4px;border-radius:2px;background:rgba(255,255,255,.06);margin-bottom:3px"></div><div style="height:4px;width:50%;border-radius:2px;background:rgba(99,102,241,.3)"></div></div></div><div style="border-radius:5px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.1);overflow:hidden"><div style="height:44px;display:flex;align-items:center;justify-content:center;background:rgba(99,102,241,.08)">👠</div><div style="padding:4px"><div style="height:4px;border-radius:2px;background:rgba(255,255,255,.06);margin-bottom:3px"></div><div style="height:4px;width:50%;border-radius:2px;background:rgba(99,102,241,.3)"></div></div></div><div style="border-radius:5px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.1);overflow:hidden"><div style="height:44px;display:flex;align-items:center;justify-content:center;background:rgba(99,102,241,.08)">👜</div><div style="padding:4px"><div style="height:4px;border-radius:2px;background:rgba(255,255,255,.06);margin-bottom:3px"></div><div style="height:4px;width:50%;border-radius:2px;background:rgba(99,102,241,.3)"></div></div></div></div></div></div>
+<div class="tpl-info"><div class="tpl-type">E-Commerce Store</div><div class="tpl-name">ShopVault</div><div class="tpl-desc">Full online store with WhatsApp checkout. Hover to order!</div><div class="tpl-meta"><span class="tpl-tag">Premium $99</span><span style="font-size:.68rem;color:var(--t3)">Hover to order ↑</span></div></div>
+</div>
 
-                <!-- Service 3 -->
-                <div class="service-item">
-                    <div class="service-image-col reveal-left">
-                        <img src="https://i.imgur.com/ljOl2Bs.jpeg" alt="Chocolate Arrangements" class="service-img" loading="lazy">
-                        <div class="service-image-overlay"></div>
-                    </div>
-                    <div class="service-text-col reveal-right">
-                        <span class="service-number">03</span>
-                        <h3>Chocolate Arrangements</h3>
-                        <p>Indulge in the art of luxury chocolate presentation. Our exquisite chocolate arrangements are crafted for special occasions, blending premium confections with artistic display to create a centerpiece that delights all senses.</p>
-                        <ul class="service-features">
-                            <li>Premium chocolate selection</li>
-                            <li>Artistic presentation design</li>
-                            <li>Custom packaging & wrapping</li>
-                            <li>Perfect for gifting occasions</li>
-                        </ul>
-                        <a href="https://wa.me/96181139230" target="_blank" class="btn-book">
-                            <span>Book Your Service</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                    </div>
-                </div>
+<div class="tpl-c vis" data-cat="agency">
+<div class="tpl-ov">
+<button class="tpl-ov-btn btn-wa-tpl" onclick="waOrder('Agency Website')">💬 Order on WhatsApp</button>
+<button class="tpl-ov-btn btn-info-tpl" onclick="waInfo('Agency Website — $59')">📋 Get More Details</button>
+</div>
+<div class="tpl-prev" style="background:linear-gradient(135deg,#050507,#0a0514)"><div class="tpl-prev-in"><div style="height:80px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;background:linear-gradient(135deg,rgba(99,102,241,.1),rgba(139,92,246,.05));padding:10px"><div style="width:65%;height:8px;border-radius:4px;background:rgba(99,102,241,.5)"></div><div style="width:45%;height:6px;border-radius:3px;background:rgba(255,255,255,.08)"></div></div><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:5px;padding:8px"><div style="height:50px;border-radius:5px;border:1px solid rgba(99,102,241,.12);background:rgba(99,102,241,.04);display:flex;align-items:center;justify-content:center">💻</div><div style="height:50px;border-radius:5px;border:1px solid rgba(99,102,241,.12);background:rgba(99,102,241,.04);display:flex;align-items:center;justify-content:center">🎨</div><div style="height:50px;border-radius:5px;border:1px solid rgba(99,102,241,.12);background:rgba(99,102,241,.04);display:flex;align-items:center;justify-content:center">📊</div><div style="height:50px;border-radius:5px;border:1px solid rgba(99,102,241,.12);background:rgba(99,102,241,.04);display:flex;align-items:center;justify-content:center">🚀</div></div></div></div>
+<div class="tpl-info"><div class="tpl-type">Digital Agency</div><div class="tpl-name">Studio Nexus</div><div class="tpl-desc">Services and portfolio showcase. Hover to order!</div><div class="tpl-meta"><span class="tpl-tag">Business $59</span><span style="font-size:.68rem;color:var(--t3)">Hover to order ↑</span></div></div>
+</div>
 
-                <!-- Service 4 -->
-                <div class="service-item">
-                    <div class="service-image-col reveal-right">
-                        <img src="https://i.imgur.com/z9w8jhi.jpeg" alt="Personalized Candle Gifts" class="service-img" loading="lazy">
-                        <div class="service-image-overlay"></div>
-                    </div>
-                    <div class="service-text-col reveal-left">
-                        <span class="service-number">04</span>
-                        <h3>Personalized Candle Gifts</h3>
-                        <p>Illuminate special moments with our bespoke candle arrangements, accompanied by personalized cards that speak from the heart. Each piece is a thoughtfully curated expression of warmth and elegance.</p>
-                        <ul class="service-features">
-                            <li>Hand-curated candle collections</li>
-                            <li>Custom calligraphy cards</li>
-                            <li>Luxury gift packaging</li>
-                            <li>Scented & decorative options</li>
-                        </ul>
-                        <a href="https://wa.me/96181139230" target="_blank" class="btn-book">
-                            <span>Book Your Service</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                    </div>
-                </div>
+<div class="tpl-c vis" data-cat="medical">
+<div class="tpl-ov">
+<button class="tpl-ov-btn btn-wa-tpl" onclick="waOrder('Medical Clinic Website')">💬 Order on WhatsApp</button>
+<button class="tpl-ov-btn btn-info-tpl" onclick="waInfo('Medical Clinic Website — $59')">📋 Get More Details</button>
+</div>
+<div class="tpl-prev" style="background:linear-gradient(135deg,#050a1a,#051428)"><div class="tpl-prev-in"><div style="height:44px;background:rgba(6,182,212,.08);display:flex;align-items:center;padding:0 10px;gap:6px"><div style="font-size:.75rem">➕</div><div style="height:7px;width:70px;border-radius:3px;background:rgba(6,182,212,.2)"></div></div><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:5px;padding:8px"><div style="height:58px;border-radius:5px;background:rgba(6,182,212,.04);border:1px solid rgba(6,182,212,.1);display:flex;align-items:center;justify-content:center">👨‍⚕️</div><div style="height:58px;border-radius:5px;background:rgba(6,182,212,.04);border:1px solid rgba(6,182,212,.1);display:flex;align-items:center;justify-content:center">🏥</div><div style="height:58px;border-radius:5px;background:rgba(6,182,212,.04);border:1px solid rgba(6,182,212,.1);display:flex;align-items:center;justify-content:center">💊</div><div style="height:58px;border-radius:5px;background:rgba(6,182,212,.04);border:1px solid rgba(6,182,212,.1);display:flex;align-items:center;justify-content:center">🩺</div></div></div></div>
+<div class="tpl-info"><div class="tpl-type">Healthcare</div><div class="tpl-name">MedCare Clinic</div><div class="tpl-desc">Appointment booking and trust elements. Hover to order!</div><div class="tpl-meta"><span class="tpl-tag">Business $59</span><span style="font-size:.68rem;color:var(--t3)">Hover to order ↑</span></div></div>
+</div>
 
-                <!-- Service 5 -->
-                <div class="service-item">
-                    <div class="service-image-col reveal-left">
-                        <img src="https://i.imgur.com/zsyNbEJ.jpeg" alt="Custom Printed Glass Gifts" class="service-img" loading="lazy">
-                        <div class="service-image-overlay"></div>
-                    </div>
-                    <div class="service-text-col reveal-right">
-                        <span class="service-number">05</span>
-                        <h3>Custom Printed Glass Gifts</h3>
-                        <p>Transform ordinary glass into extraordinary keepsakes with our precision printing service. From personalized mugs to elegant glassware, each piece carries your unique message, making it a cherished memento for any occasion.</p>
-                        <ul class="service-features">
-                            <li>High-quality glass printing</li>
-                            <li>Personalized text & images</li>
-                            <li>Variety of glass products</li>
-                            <li>Ideal for corporate & personal gifts</li>
-                        </ul>
-                        <a href="https://wa.me/96181139230" target="_blank" class="btn-book">
-                            <span>Book Your Service</span>
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="tpl-c vis" data-cat="fitness">
+<div class="tpl-ov">
+<button class="tpl-ov-btn btn-wa-tpl" onclick="waOrder('Gym & Fitness Website')">💬 Order on WhatsApp</button>
+<button class="tpl-ov-btn btn-info-tpl" onclick="waInfo('Gym & Fitness Website — $59')">📋 Get More Details</button>
+</div>
+<div class="tpl-prev" style="background:linear-gradient(135deg,#0a0500,#180a00)"><div class="tpl-prev-in"><div style="height:75px;background:linear-gradient(135deg,rgba(239,68,68,.15),rgba(220,38,38,.05));display:flex;align-items:center;justify-content:center;font-size:1.8rem">💪</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:8px"><div style="height:48px;border-radius:5px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center">🏋️</div><div style="height:48px;border-radius:5px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center">🧘</div><div style="height:48px;border-radius:5px;background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.1);display:flex;align-items:center;justify-content:center">🏃</div></div></div></div>
+<div class="tpl-info"><div class="tpl-type">Gym & Fitness</div><div class="tpl-name">FitForce Studio</div><div class="tpl-desc">Class schedules and membership plans. Hover to order!</div><div class="tpl-meta"><span class="tpl-tag">Business $59</span><span style="font-size:.68rem;color:var(--t3)">Hover to order ↑</span></div></div>
+</div>
 
-    <!-- Gallery Section -->
-    <section class="section section-gray" id="gallery">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Portfolio</span>
-                <h2 class="section-title">Our <em>Gallery</em></h2>
-                <p class="section-desc">A curated collection of our finest creations, each one a testament to our commitment to excellence.</p>
-                <div class="divider-line"></div>
-            </div>
-            <div class="gallery-masonry">
-                <div class="gallery-item reveal-scale" onclick="openLightbox(this)">
-                    <img src="https://i.imgur.com/uQgyKtv.jpeg" alt="Gallery 1" loading="lazy">
-                    <div class="gallery-overlay"><span>Children's Party</span></div>
-                </div>
-                <div class="gallery-item reveal-scale" onclick="openLightbox(this)">
-                    <img src="https://i.imgur.com/z9w8jhi.jpeg" alt="Gallery 2" loading="lazy">
-                    <div class="gallery-overlay"><span>Candle Arrangements</span></div>
-                </div>
-                <div class="gallery-item reveal-scale" onclick="openLightbox(this)">
-                    <img src="https://i.imgur.com/VusrOeO.jpeg" alt="Gallery 3" loading="lazy">
-                    <div class="gallery-overlay"><span>Birthday Setup</span></div>
-                </div>
-                <div class="gallery-item reveal-scale" onclick="openLightbox(this)">
-                    <img src="https://i.imgur.com/OvgoV26.jpeg" alt="Gallery 4" loading="lazy">
-                    <div class="gallery-overlay"><span>Custom Creation</span></div>
-                </div>
-                <div class="gallery-item reveal-scale" onclick="openLightbox(this)">
-                    <img src="https://i.imgur.com/ljOl2Bs.jpeg" alt="Gallery 5" loading="lazy">
-                    <div class="gallery-overlay"><span>Chocolate Display</span></div>
-                </div>
-                <div class="gallery-item reveal-scale" onclick="openLightbox(this)">
-                    <img src="https://i.imgur.com/zsyNbEJ.jpeg" alt="Gallery 6" loading="lazy">
-                    <div class="gallery-overlay"><span>Glass Gifts</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="tpl-c vis" data-cat="beauty">
+<div class="tpl-ov">
+<button class="tpl-ov-btn btn-wa-tpl" onclick="waOrder('Beauty Salon Website')">💬 Order on WhatsApp</button>
+<button class="tpl-ov-btn btn-info-tpl" onclick="waInfo('Beauty Salon Website — $59')">📋 Get More Details</button>
+</div>
+<div class="tpl-prev" style="background:linear-gradient(135deg,#1a0a14,#280a20)"><div class="tpl-prev-in"><div style="height:52px;background:linear-gradient(135deg,rgba(236,72,153,.15),rgba(168,85,247,.1));display:flex;align-items:center;justify-content:center;font-size:1.2rem">💄</div><div style="display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:8px"><div style="height:60px;border-radius:6px;background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.1);display:flex;align-items:center;justify-content:center">💅</div><div style="height:60px;border-radius:6px;background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.1);display:flex;align-items:center;justify-content:center">💆</div><div style="height:60px;border-radius:6px;background:rgba(236,72,153,.06);border:1px solid rgba(236,72,153,.1);display:flex;align-items:center;justify-content:center">✨</div></div></div></div>
+<div class="tpl-info"><div class="tpl-type">Beauty & Salon</div><div class="tpl-name">Glam Studio</div><div class="tpl-desc">Salon booking system and gallery. Hover to order!</div><div class="tpl-meta"><span class="tpl-tag">Business $59</span><span style="font-size:.68rem;color:var(--t3)">Hover to order ↑</span></div></div>
+</div>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-        <img src="" alt="Gallery Preview" id="lightboxImg">
-    </div>
+<div class="tpl-c vis" data-cat="education">
+<div class="tpl-ov">
+<button class="tpl-ov-btn btn-wa-tpl" onclick="waOrder('Education Website')">💬 Order on WhatsApp</button>
+<button class="tpl-ov-btn btn-info-tpl" onclick="waInfo('Education Website — $59')">📋 Get More Details</button>
+</div>
+<div class="tpl-prev" style="background:linear-gradient(135deg,#050a14,#0a1428)"><div class="tpl-prev-in"><div style="height:44px;background:rgba(34,197,94,.08);display:flex;align-items:center;padding:0 10px;gap:5px"><div style="font-size:1rem">🎓</div><div style="height:7px;width:70px;border-radius:3px;background:rgba(34,197,94,.2)"></div></div><div style="display:grid;grid-template-columns:repeat(2,1fr);gap:5px;padding:8px"><div style="height:62px;border-radius:5px;background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">📚</div><div style="height:62px;border-radius:5px;background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">🔬</div><div style="height:62px;border-radius:5px;background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">💻</div><div style="height:62px;border-radius:5px;background:rgba(34,197,94,.04);border:1px solid rgba(34,197,94,.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem">🎨</div></div></div></div>
+<div class="tpl-info"><div class="tpl-type">Education</div><div class="tpl-name">LearnSphere</div><div class="tpl-desc">Course catalog and enrollment system. Hover to order!</div><div class="tpl-meta"><span class="tpl-tag">Business $59</span><span style="font-size:.68rem;color:var(--t3)">Hover to order ↑</span></div></div>
+</div>
 
-    <!-- Why Choose Us -->
-    <section class="section section-dark" id="why">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Why Choose Us</span>
-                <h2 class="section-title">The Art of Occasions <em>Difference</em></h2>
-                <p class="section-desc">We go beyond decoration — we create experiences that resonate with emotion and artistry.</p>
-                <div class="divider-line"></div>
-            </div>
-            <div class="why-grid">
-                <div class="why-card reveal">
-                    <div class="why-icon">✦</div>
-                    <h4>Fully Customized Creations</h4>
-                    <p>Every design is uniquely tailored to your vision. No templates, no compromises — only bespoke creations that reflect your personal style.</p>
-                </div>
-                <div class="why-card reveal">
-                    <div class="why-icon">◈</div>
-                    <h4>Attention to Detail</h4>
-                    <p>We obsess over every detail, from color palettes to textures, ensuring flawless execution that transforms spaces into experiences.</p>
-                </div>
-                <div class="why-card reveal">
-                    <div class="why-icon">✧</div>
-                    <h4>Unique Artistic Designs</h4>
-                    <p>Our designs are one-of-a-kind masterpieces, crafted by creative minds who see beauty in the extraordinary and elegance in simplicity.</p>
-                </div>
-                <div class="why-card reveal">
-                    <div class="why-icon">◇</div>
-                    <h4>Premium Quality</h4>
-                    <p>We source only the finest materials and decorations, ensuring every element meets the highest standards of luxury and durability.</p>
-                </div>
-                <div class="why-card reveal">
-                    <div class="why-icon">❖</div>
-                    <h4>Memorable Experiences</h4>
-                    <p>Beyond aesthetics, we create moments that linger in memory. Every event becomes a story worth telling, a memory worth treasuring.</p>
-                </div>
-                <div class="why-card reveal">
-                    <div class="why-icon">⬡</div>
-                    <h4>Fast Communication</h4>
-                    <p>Your time is precious. Our responsive team ensures seamless communication, quick turnarounds, and a smooth planning experience from start to finish.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+</div>
+</div>
+</section>
 
-    <!-- Testimonials Section -->
-    <section class="section section-light" id="testimonials">
-        <div class="container">
-            <div class="section-header reveal">
-                <span class="section-label">Client Voices</span>
-                <h2 class="section-title">What Our Clients <em>Say</em></h2>
-                <p class="section-desc">The greatest reward is the joy reflected in our clients' words.</p>
-                <div class="divider-line"></div>
-            </div>
-            <div class="testimonials-track" id="testimonialTrack">
-                <div class="testimonial-card reveal">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-                    <p class="testimonial-text">Art of Occasions transformed my daughter's birthday into a fairy tale. The attention to detail was extraordinary — every corner was a photo opportunity. Our guests were absolutely mesmerized.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">N.K</div>
-                        <div>
-                            <div class="testimonial-name">Nadia Khalil</div>
-                            <div class="testimonial-role">Birthday Celebration Client</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card reveal">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-                    <p class="testimonial-text">The chocolate arrangement they created for our wedding was a masterpiece. It wasn't just beautiful — it told our love story. The quality and presentation exceeded all expectations.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">R.M</div>
-                        <div>
-                            <div class="testimonial-name">Rania Mansour</div>
-                            <div class="testimonial-role">Chocolate Arrangement Client</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card reveal">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-                    <p class="testimonial-text">I ordered personalized glass gifts for my corporate event and was blown away by the craftsmanship. Every piece was perfect. Art of Occasions truly understands the meaning of premium quality.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">S.H</div>
-                        <div>
-                            <div class="testimonial-name">Samer Haddad</div>
-                            <div class="testimonial-role">Custom Glass Gifts Client</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card reveal">
-                    <div class="testimonial-quote">"</div>
-                    <div class="testimonial-stars">★ ★ ★ ★ ★</div>
-                    <p class="testimonial-text">From the first message to the final setup, the experience was flawless. They responded instantly, understood my vision perfectly, and delivered beyond what I imagined. Truly world-class service.</p>
-                    <div class="testimonial-author">
-                        <div class="testimonial-avatar">L.A</div>
-                        <div>
-                            <div class="testimonial-name">Lara Abdallah</div>
-                            <div class="testimonial-role">Children's Party Client</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- STATS -->
+<section class="stats">
+<div class="sc">
+<div class="sh rv"><div class="sl">Track Record</div><h2 class="st">Numbers That Matter</h2></div>
+<div class="stats-g">
+<div class="stat-c rv"><div class="stat-n" data-t="200">0</div><div class="stat-l">Projects Delivered</div><div class="stat-sl">Across 15+ industries</div></div>
+<div class="stat-c rv"><div class="stat-n" data-t="98">0</div><div class="stat-l">Client Satisfaction</div><div class="stat-sl">Based on reviews</div></div>
+<div class="stat-c rv"><div class="stat-n" data-t="50">0</div><div class="stat-l">Active Clients</div><div class="stat-sl">Worldwide</div></div>
+<div class="stat-c rv"><div class="stat-n" data-t="40">0</div><div class="stat-l">Team Members</div><div class="stat-sl">Designers & Devs</div></div>
+</div>
+</div>
+</section>
 
-    <!-- CTA Section -->
-    <div class="cta-section">
-        <div class="cta-bg-text">OCCASIONS</div>
-        <div class="cta-content reveal">
-            <span class="section-label">Ready to Begin?</span>
-            <h2 class="cta-title">Let's Create Something <em>Extraordinary</em></h2>
-            <p class="cta-desc">Your next celebration deserves the Art of Occasions touch. Reach out today and let us bring your vision to life.</p>
-            <a href="https://wa.me/96181139230" target="_blank" class="btn-cta">
-                <span>Start Your Journey</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-        </div>
-    </div>
+<!-- TESTIMONIALS -->
+<section class="test">
+<div class="sc">
+<div class="sh rv"><div class="sl">Client Reviews</div><h2 class="st">What Our Clients Say</h2></div>
+<div class="test-g">
+<div class="test-c rv"><div class="test-stars">★★★★★</div><p class="test-txt">"Built our restaurant website in 5 days. Online orders increased 200% in the first month. Best investment we made!"</p><div class="test-auth"><div class="test-av">AM</div><div><div class="test-name">Ahmed M.</div><div class="test-role">Restaurant Owner</div></div></div></div>
+<div class="test-c rv"><div class="test-stars">★★★★★</div><p class="test-txt">"The AI chatbot changed our salon completely. Clients book automatically through WhatsApp — no more missed calls!"</p><div class="test-auth"><div class="test-av">LK</div><div><div class="test-name">Layla K.</div><div class="test-role">Salon Founder</div></div></div></div>
+<div class="test-c rv"><div class="test-stars">★★★★★</div><p class="test-txt">"Started with the $29 basic package and the quality exceeded all expectations. Professional and fast!"</p><div class="test-auth"><div class="test-av">JR</div><div><div class="test-name">James R.</div><div class="test-role">Small Business Owner</div></div></div></div>
+</div>
+</div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer" id="contact">
-        <div class="footer-grid">
-            <div>
-                <div class="footer-brand-logo">
-                    <img src="https://i.imgur.com/WQHSNRf.jpeg" alt="Art of Occasions">
-                    <span>Art of Occasions</span>
-                </div>
-                <p class="footer-brand-desc">Crafting extraordinary celebrations with exquisite artistry and meticulous attention to detail. Every occasion is an opportunity to create beauty.</p>
-            </div>
-            <div class="footer-col">
-                <h5>Quick Links</h5>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Services</h5>
-                <ul>
-                    <li><a href="#services">Children's Parties</a></li>
-                    <li><a href="#services">Birthday Celebrations</a></li>
-                    <li><a href="#services">Chocolate Arrangements</a></li>
-                    <li><a href="#services">Candle Gifts</a></li>
-                    <li><a href="#services">Glass Gifts</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>Contact</h5>
-                <div class="footer-contact-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                    <a href="tel:+96181139230" style="color: var(--gray-500); text-decoration: none;">81 139 230</a>
-                </div>
-                <div style="margin-top: 16px;">
-                    <a href="https://wa.me/96181139230" target="_blank" class="btn-book" style="font-size: 0.7rem; padding: 10px 24px;">
-                        <span>Get in Touch</span>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <span>&copy; 2025 Art of Occasions. All rights reserved.</span>
-            <span>Crafted with passion & precision</span>
-        </div>
-    </footer>
+<!-- PRICING -->
+<section class="price" id="pricing">
+<div class="sc">
+<div class="sh rv"><div class="sl">Our Packages</div><h2 class="st">NEXORA Website Packages</h2><p class="sd">Transparent pricing, no hidden fees. Click any package to order on WhatsApp.</p></div>
+<div class="price-g">
 
-    <!-- Back to Top -->
-    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-    </button>
+<div class="price-c rv">
+<div class="price-medal">🥉</div><div class="price-name">Basic Website</div>
+<div class="price-desc">For small businesses, personal brands, and startups.</div>
+<div class="price-pr"><span class="price-cur">$</span><span class="price-amt">29</span></div>
+<div class="price-div"></div>
+<div class="price-ft">Included Features</div>
+<ul class="price-fl"><li>Modern clean design</li><li>Mobile & tablet responsive</li><li>Up to 3 pages</li><li>Contact form</li><li>Direct WhatsApp button</li><li>Fast loading speed</li><li>Basic SEO setup</li><li>Social media integration</li></ul>
+<div class="price-bf"><div class="price-bfl">Best For</div><div class="price-bft">Small businesses, local stores, freelancers, portfolios.</div></div>
+<a href="https://wa.me/96176062928?text=Hi%20NEXORA!%20I%20want%20the%20Basic%20Website%20package%20($29).%20Please%20share%20more%20details." target="_blank" rel="noopener" class="btn-wa-price btn-wa-outline">💬 Order on WhatsApp</a>
+</div>
 
-    <script>
-    (function() {
-        'use strict';
+<div class="price-c feat rv">
+<div class="price-pop">Most Popular</div>
+<div class="price-medal">🥈</div><div class="price-name">Business Website</div>
+<div class="price-desc">Complete solution for growing businesses.</div>
+<div class="price-pr"><span class="price-cur">$</span><span class="price-amt">59</span></div>
+<div class="price-div"></div>
+<div class="price-ft">Included Features</div>
+<ul class="price-fl"><li>Everything in Basic</li><li>Up to 5 pages</li><li>Premium UI/UX design</li><li>Smooth animations</li><li>Service & product showcase</li><li>Advanced contact forms</li><li>Google Maps integration</li><li>Enhanced SEO</li><li>Professional layout</li></ul>
+<div class="price-bf"><div class="price-bfl">Best For</div><div class="price-bft">Restaurants, shops, agencies, gyms, beauty salons.</div></div>
+<a href="https://wa.me/96176062928?text=Hi%20NEXORA!%20I%20want%20the%20Business%20Website%20package%20($59).%20Please%20share%20more%20details." target="_blank" rel="noopener" class="btn-wa-price btn-wa-green">💬 Order on WhatsApp</a>
+</div>
 
-        // ============ PRELOADER ============
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.getElementById('preloader').classList.add('hidden');
-            }, 2200);
-        });
+<div class="price-c rv">
+<div class="price-medal">🥇</div><div class="price-name">Premium Website</div>
+<div class="price-desc">Advanced with AI chatbot and 3D effects.</div>
+<div class="price-pr"><span class="price-cur">$</span><span class="price-amt">99</span></div>
+<div class="price-div"></div>
+<div class="price-ft">Included Features</div>
+<ul class="price-fl"><li>Everything in Business</li><li>AI Chatbot integration</li><li>Advanced 2D & 3D effects</li><li>Full website animations</li><li>Custom premium design</li><li>Interactive UX</li><li>WhatsApp ordering system</li><li>Performance optimization</li><li>Premium landing sections</li><li>Priority support</li></ul>
+<div class="price-bf"><div class="price-bfl">Best For</div><div class="price-bft">Brands, e-commerce projects, high-end businesses.</div></div>
+<a href="https://wa.me/96176062928?text=Hi%20NEXORA!%20I%20want%20the%20Premium%20Website%20package%20($99).%20Please%20share%20more%20details." target="_blank" rel="noopener" class="btn-wa-price btn-wa-outline">💬 Order on WhatsApp</a>
+</div>
 
-        // ============ CUSTOM CURSOR ============
-        const cursor = document.getElementById('cursor');
-        let cursorX = 0, cursorY = 0, actualX = 0, actualY = 0;
+</div>
+</div>
+</section>
 
-        document.addEventListener('mousemove', function(e) {
-            cursorX = e.clientX;
-            cursorY = e.clientY;
-        });
+<!-- WHY -->
+<section class="why">
+<div class="sc">
+<div class="sh rv"><div class="sl">Why Nexora</div><h2 class="st">Why Choose NEXORA?</h2></div>
+<div class="why-g rv">
+<div class="why-i"><span>✅</span><span class="why-t">Professional UI/UX Design</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">Mobile-Friendly Websites</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">Fast Performance</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">AI Integration</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">2D & 3D Effects</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">Modern Animations</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">WhatsApp Order System</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">Affordable Pricing</span></div>
+<div class="why-i"><span>✅</span><span class="why-t">Dedicated Support</span></div>
+</div>
+</div>
+</section>
 
-        function animateCursor() {
-            actualX += (cursorX - actualX) * 0.12;
-            actualY += (cursorY - actualY) * 0.12;
-            cursor.style.left = actualX + 'px';
-            cursor.style.top = actualY + 'px';
-            requestAnimationFrame(animateCursor);
-        }
-        animateCursor();
+<!-- FAQ -->
+<section class="faq" id="faq">
+<div class="sc">
+<div class="sh rv"><div class="sl">FAQ</div><h2 class="st">Common Questions</h2></div>
+<div class="faq-list">
+<div class="faq-i rv"><button class="faq-q" onclick="togF(this)">How long does it take to build?<span class="faq-ic">+</span></button><div class="faq-a"><div class="faq-ai">Basic package: 3–5 business days. Business package: 5–7 days. Premium package: 7–10 days. Rush delivery available — just ask on WhatsApp!</div></div></div>
+<div class="faq-i rv"><button class="faq-q" onclick="togF(this)">Are there monthly fees after launch?<span class="faq-ic">+</span></button><div class="faq-a"><div class="faq-ai">No monthly fees! All packages are one-time payments. The only ongoing costs are domain registration (yearly) and hosting, which are separate third-party services we help you set up.</div></div></div>
+<div class="faq-i rv"><button class="faq-q" onclick="togF(this)">Can I upgrade my package later?<span class="faq-ic">+</span></button><div class="faq-a"><div class="faq-ai">Absolutely! You only pay the difference between packages. Many clients start with Basic and upgrade to Business or Premium as their business grows.</div></div></div>
+<div class="faq-i rv"><button class="faq-q" onclick="togF(this)">How does the WhatsApp ordering work?<span class="faq-ic">+</span></button><div class="faq-a"><div class="faq-ai">We integrate WhatsApp buttons directly into your website. When customers click to order, they're instantly connected to your WhatsApp with a pre-filled message — making it super easy for them to buy.</div></div></div>
+<div class="faq-i rv"><button class="faq-q" onclick="togF(this)">Will my website work on mobile phones?<span class="faq-ic">+</span></button><div class="faq-a"><div class="faq-ai">Every NEXORA website is 100% mobile responsive — tested on phones, tablets, and desktops. Over 60% of web traffic is mobile, so this is non-negotiable for us.</div></div></div>
+<div class="faq-i rv"><button class="faq-q" onclick="togF(this)">How do I get started?<span class="faq-ic">+</span></button><div class="faq-a"><div class="faq-ai">Simple! Just tap the WhatsApp button on this page or call us directly. Tell us your business name, what you do, and your preferred package — we'll take it from there and have your website ready in days!</div></div></div>
+</div>
+</div>
+</section>
 
-        // Hover effect on interactive elements
-        document.querySelectorAll('a, button, .gallery-item, .why-card, .testimonial-card').forEach(function(el) {
-            el.addEventListener('mouseenter', function() { cursor.classList.add('hover'); });
-            el.addEventListener('mouseleave', function() { cursor.classList.remove('hover'); });
-        });
+<!-- CONTACT / CTA -->
+<section class="cta-contact" id="contact">
+<div class="sc">
+<div class="sh rv"><div class="sl">Get Started</div><h2 class="st">Ready to Build Your Website?</h2></div>
+<div class="cta-box rv">
+<div class="cta-box-glow"></div>
+<div style="font-size:3rem;margin-bottom:16px">🚀</div>
+<h2 class="cta-box-t">Let's Build Your<br><span class="gr">Dream Website</span></h2>
+<p class="cta-box-s">Message us now on WhatsApp and we'll respond within minutes.<br>Tell us your business type and we'll recommend the perfect package.</p>
+<div class="cta-btns">
+<a href="https://wa.me/96176062928?text=Hi%20NEXORA!%20I%27m%20interested%20in%20building%20a%20website.%20Can%20you%20help%20me%20choose%20the%20right%20package?" target="_blank" rel="noopener" class="cta-btn-wa">
+💬 Start on WhatsApp Now
+</a>
+<div class="cta-or"><span></span><p>or reach us directly</p><span></span></div>
+<a href="tel:+96176062928" class="cta-btn-call">
+📞 Call / WhatsApp: +961 76 062 928
+</a>
+<a href="https://wa.me/96176062928?text=Hi%20NEXORA!%20I%27d%20like%20to%20book%20a%20free%20consultation%20to%20discuss%20my%20website%20project." target="_blank" rel="noopener" class="cta-btn-info">
+📅 Book Free Consultation
+</a>
+</div>
+<div class="cta-scar"><span class="sc-dot"></span><span>Only 3 project slots available this month — act fast!</span></div>
+</div>
+</div>
+</section>
 
-        // ============ NAVBAR ============
-        const navbar = document.getElementById('navbar');
-        let lastScroll = 0;
+<!-- FOOTER -->
+<footer class="foot">
+<div class="sc">
+<div class="foot-inner">
+<div class="foot-logo"><img src="https://i.imgur.com/XRLsmbg.jpeg" alt="NEXORA"><span>NEXORA</span></div>
+<div class="foot-links">
+<a href="#services">Services</a>
+<a href="#templates">Templates</a>
+<a href="#pricing">Pricing</a>
+<a href="#faq">FAQ</a>
+</div>
+<a href="https://wa.me/96176062928?text=Hi%20NEXORA!" target="_blank" rel="noopener" class="foot-wa">💬 WhatsApp Us</a>
+</div>
+<div class="foot-bot">
+<div class="foot-copy">© 2025 NEXORA. All rights reserved.</div>
+<div class="foot-tag">Building Modern Digital Experiences.</div>
+</div>
+</div>
+</footer>
 
-        window.addEventListener('scroll', function() {
-            const scrollY = window.pageYOffset;
-            if (scrollY > 80) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-            lastScroll = scrollY;
+<!-- FLOATING WHATSAPP -->
+<div class="wa-float">
+<div class="wa-float-label">Chat with us 💬</div>
+<a href="https://wa.me/96176062928?text=Hi%20NEXORA!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener" class="wa-float-main" aria-label="WhatsApp">💬</a>
+</div>
 
-            // Back to top
-            const btt = document.getElementById('backToTop');
-            if (scrollY > 600) {
-                btt.classList.add('visible');
-            } else {
-                btt.classList.remove('visible');
-            }
-        });
+<!-- SECRET PANEL -->
+<div id="secOv">
+<div id="pwScreen" class="pw-box">
+<div class="pw-ic">🔐</div>
+<h2 class="pw-t">Admin Access</h2>
+<p class="pw-s">Enter password to access prompt library</p>
+<input type="password" id="pwInp" class="pw-inp" placeholder="Enter password..." autocomplete="off">
+<div id="pwErr" class="pw-err">❌ Wrong password. Try again.</div>
+<button onclick="checkPw()" class="pw-btn">Unlock →</button>
+<button onclick="closeSec()" class="pw-cl">✕ Close</button>
+</div>
+<div id="adPanel" class="ad-panel" style="display:none">
+<div class="ad-head">
+<div class="ad-logo"><img src="https://i.imgur.com/XRLsmbg.jpeg" alt="N"><div><div class="ad-lt">NEXORA Prompt Library</div><div class="ad-ls">Copy prompts → Paste to AI → Fill details → Get website</div></div></div>
+<button onclick="closeSec()" class="ad-cl">✕ Close Panel</button>
+</div>
+<div class="ad-info">📋 <strong style="color:#818cf8">How to use:</strong> Click "Copy Prompt" → Paste into ChatGPT or Claude → Replace <strong style="color:#818cf8">[BUSINESS NAME]</strong>, <strong style="color:#818cf8">[PHONE NUMBER]</strong>, and <strong style="color:#818cf8">[LOGO URL]</strong> → AI generates the complete website.</div>
+<div id="promptsBox"></div>
+</div>
+</div>
+<div id="cpToast">✓ Prompt copied to clipboard!</div>
 
-        // ============ MOBILE MENU ============
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
+<script>
+(function(){
+"use strict";
 
-        menuToggle.addEventListener('click', function() {
-            menuToggle.classList.toggle('active');
-            mobileMenu.classList.toggle('open');
-            document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-        });
+var WA_NUM='96176062928';
 
-        mobileMenu.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                menuToggle.classList.remove('active');
-                mobileMenu.classList.remove('open');
-                document.body.style.overflow = '';
-            });
-        });
+var PD=[
+{id:'restaurant',ic:'🍽️',nm:'Restaurant & Food',pk:'Business — $59',cl:'251,146,60',pr:'Build a complete, single-file HTML restaurant website with:\n\nBUSINESS NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\n\nDESIGN: Dark premium theme, warm orange accents (#f97316), mobile-first, smooth animations, fixed nav with WhatsApp CTA.\n\nSECTIONS:\n1. Hero: Full-screen, restaurant name, tagline, "Order Now" WhatsApp button\n2. About: Story, founding year, specialty\n3. Menu: Grid of 6-9 items with emoji, name, description, price, WhatsApp order buttons\n4. Gallery: CSS-styled image placeholders\n5. Testimonials: 3 reviews with stars\n6. Location: Google Maps placeholder, address, hours\n7. Contact: WhatsApp, phone, socials\n8. Footer: Logo, links, copyright\n\nFEATURES: WhatsApp pre-filled message "Hi [NAME]! I\'d like to order:", 3D hover tilt on menu cards, floating WhatsApp button, animated counters, mobile hamburger menu, loading animation.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.'},
+{id:'ecommerce',ic:'🛒',nm:'E-Commerce Store',pk:'Premium — $99',cl:'99,102,241',pr:'Build a complete, single-file HTML e-commerce website with:\n\nBUSINESS NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\n\nDESIGN: Dark modern theme, indigo accents (#6366f1), premium product cards, mobile-first grid.\n\nSECTIONS:\n1. Nav: Logo, search bar, cart icon, WhatsApp CTA\n2. Hero: Animated gradient, featured collection, shop now button\n3. Category Filters: JavaScript filter buttons (All, Men, Women, Accessories, etc.)\n4. Products: 9-12 cards with emoji, name, desc, price, WhatsApp "Buy Now" button\n5. Features Bar: Free shipping, secure payment, easy returns, 24/7 support\n6. Best Sellers: 3 highlighted products with badges\n7. Testimonials: 3 customer reviews\n8. Newsletter section\n9. Footer with links\n\nFEATURES: Category filter with animation, WhatsApp order pre-fills product name and price, 3D hover tilt on product cards, search filter (JS), floating cart button, mobile responsive.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.'},
+{id:'agency',ic:'💼',nm:'Digital Agency',pk:'Business — $59',cl:'6,182,212',pr:'Build a complete, single-file HTML agency website with:\n\nBUSINESS NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\n\nDESIGN: Ultra-dark (#050507), indigo/violet accents, animated CSS grid background, glassmorphism cards, Space Grotesk + Inter fonts.\n\nSECTIONS:\n1. Glassmorphism navbar with "Start Project" CTA\n2. Cinematic hero: animated gradient text, floating metric cards, dual CTA buttons\n3. Services: 6 cards with icon, title, desc, hover glow effect\n4. Portfolio: 4 project showcase cards with mockup previews\n5. Process: 5-step numbered timeline with connector line\n6. Statistics: Animated counters (200+ projects, 98% satisfaction, etc.)\n7. Testimonials: 3 glassmorphism cards\n8. Pricing: 3 tier cards (Basic/Business/Premium)\n9. Contact form with WhatsApp fallback button\n10. Footer with logo, links, socials\n\nFEATURES: Scroll reveal animations (Intersection Observer), custom cursor follower, animated stat counters, mobile hamburger nav, floating WhatsApp button, smooth scroll.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.'},
+{id:'portfolio',ic:'🎭',nm:'Personal Portfolio',pk:'Basic — $29',cl:'168,85,247',pr:'Build a complete, single-file HTML personal portfolio website with:\n\nOWNER NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nPHOTO/LOGO: [LOGO URL]\nPROFESSION: [e.g. Graphic Designer / Web Developer / Photographer]\n\nDESIGN: Minimalist dark theme, clean typography, smooth scroll animations, masonry/grid portfolio layout, subtle accent color.\n\nSECTIONS:\n1. Nav: Name/logo, nav links (About, Work, Skills, Contact), "Hire Me" button\n2. Hero: Name, typing animation for profession, short bio, download CV + contact buttons, profile image placeholder\n3. About: Personal story, years of experience, completed projects\n4. Skills: Skill tags with proficiency bars\n5. Portfolio: 6-9 project cards with category, name, description, tags, View button\n6. Category filter tabs (All, Web, Design, Photography, etc.)\n7. Testimonials: 3 client reviews\n8. Contact: WhatsApp, email, social links, simple contact form\n9. Footer: Name, tagline, social icons\n\nFEATURES: Typing animation for profession, portfolio category filter (JS), scroll reveal animations, WhatsApp "Hire Me" button, mobile responsive.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.'},
+{id:'medical',ic:'🏥',nm:'Medical & Healthcare',pk:'Business — $59',cl:'6,182,212',pr:'Build a complete, single-file HTML medical clinic website with:\n\nCLINIC NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\n\nDESIGN: Dark-navy theme, cyan/teal accents (#06b6d4), trust-inspiring professional layout, clean typography.\n\nSECTIONS:\n1. Nav: Logo, nav links, emergency call button, appointment WhatsApp button\n2. Hero: Clinic name, tagline "Your Health, Our Priority", book appointment CTA, emergency number\n3. Services: 6 medical services grid (Consultation, Lab, Surgery, etc.) with WhatsApp "Book Now"\n4. About: Clinic story, years established, mission statement\n5. Doctors: 3 doctor profile cards with specialty, qualifications, experience\n6. Trust Badges: Certified Doctors, Modern Equipment, 24/7 Emergency, Affordable Care\n7. Statistics: Animated counters (patients, years, specialists, satisfaction)\n8. Testimonials: 3 patient reviews with star ratings\n9. Appointment: WhatsApp booking form with service selector\n10. Location & Hours: Operating hours table, address, Google Maps placeholder\n11. Footer with emergency number prominently displayed\n\nFEATURES: Emergency number always visible, WhatsApp appointment with pre-filled message, scroll animations, floating WhatsApp + call buttons, mobile responsive.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.'},
+{id:'realestate',ic:'🏠',nm:'Real Estate',pk:'Premium — $99',cl:'251,191,36',pr:'Build a complete, single-file HTML real estate website with:\n\nAGENCY NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\nCITY/REGION: [Location]\n\nDESIGN: Luxury dark theme, gold/amber accents (#f59e0b), premium property card design, full-width hero.\n\nSECTIONS:\n1. Nav: Logo, nav links, call + WhatsApp CTA buttons\n2. Hero: "Find Your Dream Property", property search with type/location/price/bedrooms dropdowns, search button\n3. Featured Properties: 6 property cards with type badge, price, location, bed/bath/sqft icons, WhatsApp inquiry button\n4. Categories: Buy, Rent, Commercial, Land tabs\n5. Why Choose Us: 4 trust points (Verified Listings, Expert Agents, Best Prices, Support)\n6. Statistics: Properties listed, clients, years, cities covered\n7. How It Works: 3-step process (Search → View → Move In)\n8. Agent Profiles: 3 agents with name, specialty, listings count, WhatsApp button\n9. Testimonials: 3 client reviews\n10. Free Valuation form: WhatsApp submission\n11. Footer\n\nFEATURES: Property filter by type (Buy/Rent toggle + dropdowns), WhatsApp inquiry pre-fills property details, JS category filter, scroll animations, floating WhatsApp + call, mobile responsive.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.'},
+{id:'fitness',ic:'💪',nm:'Gym & Fitness',pk:'Business — $59',cl:'239,68,68',pr:'Build a complete, single-file HTML gym and fitness website with:\n\nGYM NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\nLOCATION: [City/Address]\n\nDESIGN: Dark aggressive theme, red/orange energy accents (#ef4444), bold typography, high contrast, energetic animations.\n\nSECTIONS:\n1. Nav: Gym logo, nav links, "Join Now" CTA button\n2. Hero: Bold headline "Transform Your Body", stats bar, join now + tour buttons\n3. Programs: 6 program cards (Weight Training, Cardio, CrossFit, Yoga, Personal Training, Nutrition)\n4. Membership Plans: 3 pricing cards (Basic/Pro/Elite) with monthly price, features, WhatsApp join button\n5. Trainers: 3 trainer profile cards with specialty, certifications, experience\n6. Class Schedule: Weekly timetable with clickable day tabs\n7. Facilities: Equipment and amenities icon grid\n8. Statistics: Members, classes per week, trainers, years open\n9. Contact & Location: Address, WhatsApp join, opening hours\n10. Footer\n\nFEATURES: WhatsApp join pre-fills "Hi! I want to join [GYM], interested in [Plan]", class schedule day tabs (JS), membership monthly/yearly toggle, scroll animations, mobile responsive.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.'},
+{id:'saas',ic:'⚡',nm:'SaaS / Tech Platform',pk:'Premium — $99',cl:'99,102,241',pr:'Build a complete, single-file HTML SaaS product landing page with:\n\nPRODUCT NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\nTAGLINE: [One-line description of what the product does]\n\nDESIGN: Ultra-premium dark (#050507), indigo/violet/cyan gradient accents, glassmorphism UI, animated CSS grid background, CSS dashboard mockup, Apple/Stripe level quality, Space Grotesk + Inter fonts.\n\nSECTIONS:\n1. Nav: Logo, feature links, pricing, login, "Start Free Trial" CTA\n2. Hero: Animated gradient headline, CSS dashboard mockup preview, dual CTAs\n3. Trusted By: Company logos bar (fictional)\n4. Features: 6 feature cards with icon, title, desc, hover glow\n5. Product Demo: Large mockup section with feature callout annotations\n6. How It Works: 3-step process\n7. Pricing: 3 tiers (Starter/Pro/Enterprise) with monthly/annually toggle\n8. Integrations: 12 tool icon grid\n9. Statistics: Animated counters\n10. Testimonials: 3 customer quotes\n11. FAQ: 6 accordion items\n12. Final CTA with email input\n13. Footer\n\nFEATURES: Animated CSS dashboard mockup in hero, accordion FAQ, pricing toggle (monthly/annual with discount badge), custom cursor effect, particle background, WhatsApp support button.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.'},
+{id:'beauty',ic:'💄',nm:'Beauty & Salon',pk:'Business — $59',cl:'236,72,153',pr:'Build a complete, single-file HTML beauty salon website with:\n\nSALON NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\nLOCATION: [City/Address]\n\nDESIGN: Elegant dark theme, rose/pink and purple accents (#ec4899), luxury feminine aesthetic, smooth graceful animations, gallery-focused layout.\n\nSECTIONS:\n1. Nav: Elegant logo, nav links, "Book Now" WhatsApp CTA\n2. Hero: Luxurious headline, beauty tagline, floating discount badge, dual CTA buttons\n3. Services: 6-8 service cards (Hair, Nails, Facial, Makeup, Waxing, Lashes, Massage, Eyebrows) with price, duration, WhatsApp book button\n4. About: Salon story, years experience, certified team\n5. Gallery: CSS-styled image grid with category filter tabs (Hair, Nails, Makeup, Skin)\n6. Specialists: 3 beautician profiles with name, specialty, experience\n7. Trust Badges: Premium Products, Certified Team, Hygienic, Guaranteed\n8. Pricing Menu: Detailed service price list by category\n9. Testimonials: 4 client reviews with star ratings\n10. Booking: WhatsApp form with service selector, date preference\n11. Location & Hours, Footer\n\nFEATURES: WhatsApp booking "Hi [SALON]! Book: [Service] on [Date]", gallery filter by category (JS), scroll animations, floating WhatsApp button, mobile responsive.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.'},
+{id:'education',ic:'🎓',nm:'Education & E-Learning',pk:'Business — $59',cl:'34,197,94',pr:'Build a complete, single-file HTML education/e-learning website with:\n\nINSTITUTION NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\nSPECIALIZATION: [e.g. Online Coding Courses / Language School / University Prep]\n\nDESIGN: Professional dark theme, green/emerald accents (#22c55e), clean academic layout, course card grid.\n\nSECTIONS:\n1. Nav: Institution logo, nav links, login, "Enroll Now" CTA\n2. Hero: "Unlock Your Potential", search courses bar, stats (students, courses, instructors, completion rate)\n3. Course Categories: Filter tabs with icons (Programming, Design, Business, Languages, Science, Arts)\n4. Featured Courses: 6 cards with category badge, name, instructor, duration, level, rating, price, WhatsApp enroll button\n5. About: Institution history, mission, accreditations\n6. How It Works: 4 steps (Browse → Enroll → Learn → Certify)\n7. Instructors: 3 profiles with subject, qualifications, course count\n8. Testimonials: 4 student reviews\n9. FAQ: 5 accordion questions\n10. Contact: WhatsApp enrollment, email, phone, location\n11. Footer\n\nFEATURES: Course filter by category (JS), WhatsApp enrollment pre-fills course name, scroll reveal animations, accordion FAQ, mobile responsive.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.'},
+{id:'basic',ic:'🥉',nm:'Basic Business Website',pk:'Basic — $29',cl:'99,102,241',pr:'Build a simple, fast, single-file HTML business website with:\n\nBUSINESS NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\nBUSINESS TYPE: [e.g. Consulting / Cleaning Service / Plumber / Local Shop]\nCITY: [Location]\n\nDESIGN: Clean modern dark theme, professional accent color, simple fast-loading design, mobile-first single scrollable page, clear CTAs throughout.\n\nSECTIONS:\n1. Nav: Logo, 3 nav links (Home, Services, Contact), WhatsApp CTA button\n2. Hero: Business name, one-line tagline, what they do, large "Chat on WhatsApp" CTA button, phone number\n3. About: 2-3 paragraph business description, years in business, what makes them different\n4. Services: 3-6 service cards with icon, service name, short description\n5. Why Choose Us: 4 simple points (Experience, Quality, Reliability, Affordable Prices)\n6. Contact: Large WhatsApp button, phone number (click to call), email address, city/location, operating hours\n7. Footer: Business name, tagline, WhatsApp and phone buttons\n\nFEATURES: Large prominent WhatsApp chat button, click-to-call phone number, social media icon links, smooth scroll, mobile responsive hamburger menu, simple hover effects. KEEP IT SIMPLE AND FAST.\n\nOUTPUT: Complete single HTML file, all CSS/JS inline, Google Fonts only.'},
+{id:'premium',ic:'🥇',nm:'Premium AI-Powered Website',pk:'Premium — $99',cl:'139,92,246',pr:'Build a PREMIUM single-file HTML website with AI chatbot integration for:\n\nBUSINESS NAME: [BUSINESS NAME]\nPHONE/WHATSAPP: [PHONE NUMBER]\nLOGO: [LOGO URL]\nBUSINESS TYPE: [Type of business]\nINDUSTRY: [Industry]\n\nDESIGN LEVEL: Apple / Tesla / Stripe quality\n- Ultra-dark background (#050507)\n- Animated gradient orbs (blur 120px, slow-moving)\n- CSS particle system (40+ floating particles)\n- Custom cursor follower (ring + dot)\n- Glassmorphism throughout\n- 3D CSS perspective transforms\n- Space Grotesk + Inter fonts\n- Cinematic loading screen with logo animation\n\nADVANCED FEATURES TO BUILD:\n1. Custom cursor: Animated ring follows mouse + small dot\n2. Cinematic loading screen: Logo reveal + animated progress bar\n3. Animated CSS grid background (subtle)\n4. 3 floating gradient orbs (animated, blurred)\n5. 40+ floating particles using CSS animation\n6. Mouse-reactive glow effect that follows cursor\n7. AI CHATBOT WIDGET: Fixed bottom-right chat bubble button, opens glassmorphism chat window, bot named "[BUSINESS NAME] Assistant", pre-programmed smart responses for: Hello/Hi, Services (list all), Pricing ($29/$59/$99), Hours, Location, Contact info, WhatsApp redirect. Shows typing indicator (...) animation before responses. Includes timestamps on messages. Has "Connect to WhatsApp" button inside chat.\n\nSECTIONS:\n1. Cinematic hero: Full viewport, animated gradient text, CSS particle background, 3 floating metric cards\n2. Services: Cards with 3D tilt effect on hover, gradient glow on active\n3. Portfolio/Showcase: 3D card perspective effects\n4. Statistics: Smooth animated number counters\n5. Testimonials: Auto-rotating carousel with smooth transitions\n6. Pricing: 3D elevation hover, featured card with animated glow border\n7. FAQ: Smooth accordion with icon rotation animation\n8. Contact: Luxury form design with floating animated labels\n9. Premium footer with animated gradient top border\n\nOUTPUT: Complete single HTML file, ALL CSS and JavaScript inline. Make it look like it was designed by an award-winning agency. Google Fonts only.'}
+];
 
-        // ============ SCROLL REVEAL ============
-        function revealElements() {
-            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-            const windowHeight = window.innerHeight;
+/* LOADER */
+window.addEventListener('load',function(){setTimeout(function(){document.getElementById('loader').classList.add('done')},2200)});
 
-            reveals.forEach(function(el, i) {
-                const elementTop = el.getBoundingClientRect().top;
-                const revealPoint = 120;
+/* CURSOR */
+var cEl=document.getElementById('cur'),dEl=document.getElementById('dotEl'),gEl=document.getElementById('glowEl');
+var mx=0,my=0,cx=0,cy=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;dEl.style.left=mx+'px';dEl.style.top=my+'px';gEl.style.left=mx+'px';gEl.style.top=my+'px'});
+(function aC(){cx+=(mx-cx)*.12;cy+=(my-cy)*.12;cEl.style.left=cx+'px';cEl.style.top=cy+'px';requestAnimationFrame(aC)})();
 
-                if (elementTop < windowHeight - revealPoint) {
-                    el.style.transitionDelay = (i % 4) * 0.08 + 's';
-                    el.classList.add('active');
-                }
-            });
-        }
+/* PARTICLES */
+var pc=document.getElementById('parts');
+for(var i=0;i<35;i++){var p=document.createElement('div');p.className='pt';p.style.left=Math.random()*100+'%';p.style.animationDuration=(8+Math.random()*12)+'s';p.style.animationDelay=Math.random()*10+'s';var sz=(1+Math.random()*2)+'px';p.style.width=sz;p.style.height=sz;pc.appendChild(p)}
 
-        window.addEventListener('scroll', revealElements);
-        window.addEventListener('load', function() {
-            setTimeout(revealElements, 300);
-        });
+/* NAV */
+var navEl=document.getElementById('nav');
+window.addEventListener('scroll',function(){navEl.classList.toggle('sc',window.scrollY>50)});
+document.getElementById('mobTog').addEventListener('click',function(){document.getElementById('navLinks').classList.toggle('mob-open')});
+document.querySelectorAll('.nav-links a').forEach(function(l){l.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('mob-open')})});
 
-        // ============ PARALLAX ============
-        window.addEventListener('scroll', function() {
-            const parallaxBgs = document.querySelectorAll('[data-parallax-bg]');
-            parallaxBgs.forEach(function(bg) {
-                const section = bg.closest('.parallax-section');
-                if (!section) return;
-                const rect = section.getBoundingClientRect();
-                const speed = 0.3;
-                const yPos = rect.top * speed;
-                bg.style.transform = 'translateY(' + yPos + 'px)';
-            });
-        });
+/* REVEAL */
+var ro=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('vis')})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){ro.observe(el)});
 
-        // ============ SMOOTH ANCHOR SCROLL ============
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    e.preventDefault();
-                    const offset = 80;
-                    const y = target.getBoundingClientRect().top + window.pageYOffset - offset;
-                    window.scrollTo({ top: y, behavior: 'smooth' });
-                }
-            });
-        });
+/* TIMELINE REVEAL */
+var tro=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('vis')})},{threshold:0.1});
+document.querySelectorAll('.tl-item').forEach(function(el){tro.observe(el)});
 
-        // ============ TESTIMONIALS HORIZONTAL SCROLL ============
-        const track = document.getElementById('testimonialTrack');
-        let isDown = false, startX, scrollLeft;
+/* COUNTERS */
+var co=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){var t=parseInt(en.target.getAttribute('data-t'));aC2(en.target,t);co.unobserve(en.target)}})},{threshold:0.5});
+document.querySelectorAll('.stat-n[data-t]').forEach(function(el){co.observe(el)});
+function aC2(el,t){var c=0,inc=t/60,s=t===98?'%':'+';(function u(){c+=inc;if(c>=t){el.textContent=t+s;return}el.textContent=Math.floor(c)+s;requestAnimationFrame(u)})()}
 
-        if (track) {
-            track.addEventListener('mousedown', function(e) {
-                isDown = true;
-                startX = e.pageX - track.offsetLeft;
-                scrollLeft = track.scrollLeft;
-                track.style.cursor = 'grabbing';
-            });
-            track.addEventListener('mouseleave', function() {
-                isDown = false;
-                track.style.cursor = 'grab';
-            });
-            track.addEventListener('mouseup', function() {
-                isDown = false;
-                track.style.cursor = 'grab';
-            });
-            track.addEventListener('mousemove', function(e) {
-                if (!isDown) return;
-                e.preventDefault();
-                const x = e.pageX - track.offsetLeft;
-                const walk = (x - startX) * 1.5;
-                track.scrollLeft = scrollLeft - walk;
-            });
-            track.style.cursor = 'grab';
-            track.style.overflowX = 'auto';
-            track.style.scrollbarWidth = 'none';
-            track.style.msOverflowStyle = 'none';
+/* TEMPLATE FILTER */
+document.querySelectorAll('.tpl-tab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.tpl-tab').forEach(function(t){t.classList.remove('active')});
+    tab.classList.add('active');
+    var f=tab.getAttribute('data-f');
+    document.querySelectorAll('.tpl-c').forEach(function(c){c.classList.toggle('vis',f==='all'||c.getAttribute('data-cat')===f)});
+  });
+});
 
-            // Touch support
-            track.addEventListener('touchstart', function(e) {
-                startX = e.touches[0].pageX - track.offsetLeft;
-                scrollLeft = track.scrollLeft;
-            });
-            track.addEventListener('touchmove', function(e) {
-                const x = e.touches[0].pageX - track.offsetLeft;
-                const walk = (x - startX) * 1.5;
-                track.scrollLeft = scrollLeft - walk;
-            });
-        }
+/* TEMPLATE 3D TILT */
+document.querySelectorAll('.tpl-c').forEach(function(c){
+  c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect();var rx=(e.clientY-r.top-r.height/2)/(r.height/2)*-5;var ry=(e.clientX-r.left-r.width/2)/(r.width/2)*5;c.style.transform='perspective(1000px) rotateX('+rx+'deg) rotateY('+ry+'deg) translateY(-8px)'});
+  c.addEventListener('mouseleave',function(){c.style.transform=''});
+});
 
-        // ============ COUNTER ANIMATION ============
-        function animateCounters() {
-            document.querySelectorAll('.intro-stat-num').forEach(function(counter) {
-                if (counter.dataset.animated) return;
-                const rect = counter.getBoundingClientRect();
-                if (rect.top > window.innerHeight) return;
-                counter.dataset.animated = 'true';
+/* FAQ */
+window.togF=function(btn){
+  var item=btn.parentElement,ans=item.querySelector('.faq-a'),isO=item.classList.contains('open');
+  document.querySelectorAll('.faq-i').forEach(function(x){x.classList.remove('open');x.querySelector('.faq-a').style.maxHeight='0'});
+  if(!isO){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px'}
+};
 
-                const text = counter.textContent;
-                const num = parseInt(text);
-                const suffix = text.replace(/[0-9]/g, '');
-                const duration = 2000;
-                const start = performance.now();
+/* WHATSAPP FUNCTIONS */
+window.waOrder=function(type){
+  var msg='Hi NEXORA! I want to order the '+type+'. Can you share pricing and timeline details?';
+  window.open('https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(msg),'_blank');
+};
+window.waInfo=function(pkg){
+  var msg='Hi NEXORA! I\'d like more details about the '+pkg+'. Can you help?';
+  window.open('https://wa.me/'+WA_NUM+'?text='+encodeURIComponent(msg),'_blank');
+};
 
-                function step(now) {
-                    const progress = Math.min((now - start) / duration, 1);
-                    const eased = 1 - Math.pow(1 - progress, 3);
-                    const current = Math.round(num * eased);
-                    counter.textContent = current + suffix;
-                    if (progress < 1) requestAnimationFrame(step);
-                }
-                requestAnimationFrame(step);
-            });
-        }
-        window.addEventListener('scroll', animateCounters);
+/* SMOOTH SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var href=this.getAttribute('href');
+    if(href==='#')return;
+    e.preventDefault();
+    var el=document.querySelector(href);
+    if(el)window.scrollTo({top:el.offsetTop-80,behavior:'smooth'});
+  });
+});
 
-        // ============ TILT EFFECT ON SERVICE IMAGES ============
-        document.querySelectorAll('.service-image-col').forEach(function(card) {
-            card.addEventListener('mousemove', function(e) {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                const rotateX = (y - centerY) / 30;
-                const rotateY = (centerX - x) / 30;
-                card.style.transform = 'perspective(1000px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg)';
-            });
-            card.addEventListener('mouseleave', function() {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-                card.style.transition = 'transform 0.5s ease';
-            });
-            card.addEventListener('mouseenter', function() {
-                card.style.transition = 'none';
-            });
-        });
+/* SECRET PANEL — Press 1 then 9 then n */
+var kBuf=[],secOv=document.getElementById('secOv'),pwSc=document.getElementById('pwScreen'),adPn=document.getElementById('adPanel'),pwI=document.getElementById('pwInp'),pwE=document.getElementById('pwErr'),built=false;
 
-    })();
+document.addEventListener('keydown',function(e){
+  kBuf.push(e.key.toLowerCase());
+  if(kBuf.length>3)kBuf.shift();
+  if(kBuf.length===3&&kBuf[0]==='1'&&kBuf[1]==='9'&&kBuf[2]==='n'){kBuf=[];openSec()}
+});
 
-    // ============ LIGHTBOX ============
-    function openLightbox(el) {
-        const img = el.querySelector('img');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightboxImg');
-        lightboxImg.src = img.src;
-        lightbox.classList.add('open');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox() {
-        document.getElementById('lightbox').classList.remove('open');
-        document.body.style.overflow = '';
-    }
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeLightbox();
-    });
-    </script>
+function openSec(){
+  secOv.className='showPw';secOv.style.display='flex';
+  pwSc.style.display='block';adPn.style.display='none';
+  document.body.style.overflow='hidden';
+  setTimeout(function(){pwI.focus()},200);
+}
+
+window.checkPw=function(){
+  if(pwI.value==='nasrallah20111'){
+    pwSc.style.display='none';adPn.style.display='block';
+    secOv.className='showAd';secOv.style.display='block';
+    pwE.style.display='none';pwI.value='';
+    if(!built)buildPs();
+  }else{
+    pwE.style.display='block';pwI.value='';
+    pwI.style.borderColor='#ef4444';
+    setTimeout(function(){pwI.style.borderColor='rgba(255,255,255,.1)'},1500);
+  }
+};
+
+pwI.addEventListener('keydown',function(e){if(e.key==='Enter')window.checkPw()});
+pwI.addEventListener('focus',function(){this.style.borderColor='rgba(99,102,241,.6)';this.style.boxShadow='0 0 0 3px rgba(99,102,241,.15)'});
+pwI.addEventListener('blur',function(){this.style.borderColor='rgba(255,255,255,.1)';this.style.boxShadow='none'});
+
+window.closeSec=function(){
+  secOv.className='';secOv.style.display='none';
+  pwI.value='';pwE.style.display='none';
+  document.body.style.overflow='';
+};
+
+function buildPs(){
+  built=true;
+  var box=document.getElementById('promptsBox');
+  PD.forEach(function(p){
+    var card=document.createElement('div');card.className='p-card';
+    var h='<div class="p-head" style="background:linear-gradient(135deg,rgba('+p.cl+',.12),rgba('+p.cl+',.04))">';
+    h+='<div class="p-icon" style="background:rgba('+p.cl+',.15)">'+p.ic+'</div>';
+    h+='<div style="flex:1;min-width:0"><div class="p-nm">'+p.nm+'</div><div class="p-pk">'+p.pk+'</div></div>';
+    h+='<button class="p-cp" onclick="cpPr(\''+p.id+'\')">Copy Prompt</button></div>';
+    h+='<div class="p-body"><textarea id="pr-'+p.id+'" class="p-ta" readonly>'+p.pr+'</textarea></div>';
+    card.innerHTML=h;box.appendChild(card);
+  });
+}
+
+window.cpPr=function(id){
+  var ta=document.getElementById('pr-'+id);
+  if(!ta)return;
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(ta.value).then(showTst).catch(function(){fbCp(ta)})}
+  else{fbCp(ta)}
+};
+function fbCp(ta){ta.select();ta.setSelectionRange(0,999999);try{document.execCommand('copy');showTst()}catch(e){alert('Please copy manually (Ctrl+C)')}}
+function showTst(){var t=document.getElementById('cpToast');t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2500)}
+
+})();
+</script>
 </body>
 </html>
